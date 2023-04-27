@@ -1,38 +1,42 @@
-# create-svelte
+# Hydrogen template: Hello World
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
+Hydrogen is Shopify’s stack for headless commerce. Hydrogen is designed to dovetail with [Remix](https://remix.run/), Shopify’s full stack web framework. This template contains a **minimal setup** of components, queries and tooling to get started with Hydrogen.
 
-## Creating a project
+[Check out Hydrogen docs](https://shopify.dev/custom-storefronts/hydrogen)
+[Get familiar with Remix](https://remix.run/docs/en/v1)
 
-If you're seeing this, you've probably already done this step. Congrats!
+## What's included
+
+- Remix
+- Hydrogen
+- Oxygen
+- Shopify CLI
+- ESLint
+- Prettier
+- GraphQL generator
+- TypeScript and JavaScript flavors
+- Minimal setup of components and routes
+
+## Getting started
+
+**Requirements:**
+
+- Node.js version 16.14.0 or higher
 
 ```bash
-# create a new project in the current directory
-npm create svelte@latest
-
-# create a new project in my-app
-npm create svelte@latest my-app
+npm create @shopify/hydrogen@latest -- --template hello-world
 ```
 
-## Developing
+Remember to update `.env` with your shop's domain and Storefront API token!
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
-
-```bash
-npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
-
-## Building
-
-To create a production version of your app:
+## Building for production
 
 ```bash
 npm run build
 ```
 
-You can preview the production build with `npm run preview`.
+## Local development
 
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+```bash
+npm run dev
+```
