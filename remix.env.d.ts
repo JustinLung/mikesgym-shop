@@ -2,8 +2,9 @@
 /// <reference types="@shopify/remix-oxygen" />
 /// <reference types="@shopify/oxygen-workers-types" />
 
-import type {Storefront} from '@shopify/hydrogen';
-import type {HydrogenSession} from '../server';
+import type {WithCache} from '@shopify/hydrogen';
+import type {Storefront} from '~/lib/type';
+import type {HydrogenSession} from '~/lib/session.server';
 
 declare global {
   /**
@@ -29,8 +30,12 @@ declare global {
  */
 declare module '@shopify/remix-oxygen' {
   export interface AppLoadContext {
+    waitUntil: ExecutionContext['waitUntil'];
     session: HydrogenSession;
     storefront: Storefront;
     env: Env;
   }
 }
+
+// Needed to make this file a module.
+export {};
