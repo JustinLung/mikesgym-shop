@@ -12224,7 +12224,7 @@ var require_react_jsx_dev_runtime_development = __commonJS({
           value: source
         }), Object.freeze && (Object.freeze(element.props), Object.freeze(element)), element;
       };
-      function jsxDEV13(type, config, maybeKey, source, self) {
+      function jsxDEV6(type, config, maybeKey, source, self) {
         {
           var propName, props = {}, key = null, ref = null;
           maybeKey !== void 0 && (checkKeyStringCoercion(maybeKey), key = "" + maybeKey), hasValidKey(config) && (checkKeyStringCoercion(config.key), key = "" + config.key), hasValidRef(config) && (ref = config.ref, warnIfStringRefCannotBeAutoConverted(config, self));
@@ -12369,7 +12369,7 @@ Check the top-level render call using <` + parentName + ">.");
             var typeString;
             type === null ? typeString = "null" : isArray(type) ? typeString = "array" : type !== void 0 && type.$$typeof === REACT_ELEMENT_TYPE ? (typeString = "<" + (getComponentNameFromType(type.type) || "Unknown") + " />", info = " Did you accidentally export a JSX literal instead of a component?") : typeString = typeof type, error("React.jsx: type is invalid -- expected a string (for built-in components) or a class/function (for composite components) but got: %s.%s", typeString, info);
           }
-          var element = jsxDEV13(type, props, key, source, self);
+          var element = jsxDEV6(type, props, key, source, self);
           if (element == null)
             return element;
           if (validType) {
@@ -12990,17 +12990,17 @@ Check this link for more details:
 https://remix.run/pages/gotchas#server-code-in-client-bundles`);
   let error = useRouteError(), {
     CatchBoundary,
-    ErrorBoundary: ErrorBoundary2
+    ErrorBoundary
   } = routeModules[id];
   if (future2.v2_errorBoundary) {
-    if (id === "root" && (ErrorBoundary2 || (ErrorBoundary2 = V2_RemixRootDefaultErrorBoundary)), ErrorBoundary2)
-      return /* @__PURE__ */ React3.createElement(ErrorBoundary2, null);
+    if (id === "root" && (ErrorBoundary || (ErrorBoundary = V2_RemixRootDefaultErrorBoundary)), ErrorBoundary)
+      return /* @__PURE__ */ React3.createElement(ErrorBoundary, null);
     throw error;
   }
-  if (id === "root" && (CatchBoundary || (CatchBoundary = RemixRootDefaultCatchBoundary), ErrorBoundary2 || (ErrorBoundary2 = RemixRootDefaultErrorBoundary)), isRouteErrorResponse(error)) {
+  if (id === "root" && (CatchBoundary || (CatchBoundary = RemixRootDefaultCatchBoundary), ErrorBoundary || (ErrorBoundary = RemixRootDefaultErrorBoundary)), isRouteErrorResponse(error)) {
     let tError = error;
-    if ((tError == null ? void 0 : tError.error) instanceof Error && tError.status !== 404 && ErrorBoundary2)
-      return /* @__PURE__ */ React3.createElement(ErrorBoundary2, {
+    if ((tError == null ? void 0 : tError.error) instanceof Error && tError.status !== 404 && ErrorBoundary)
+      return /* @__PURE__ */ React3.createElement(ErrorBoundary, {
         error: tError.error
       });
     if (CatchBoundary)
@@ -13009,8 +13009,8 @@ https://remix.run/pages/gotchas#server-code-in-client-bundles`);
         catch: error
       });
   }
-  if (error instanceof Error && ErrorBoundary2)
-    return /* @__PURE__ */ React3.createElement(ErrorBoundary2, {
+  if (error instanceof Error && ErrorBoundary)
+    return /* @__PURE__ */ React3.createElement(ErrorBoundary, {
       error
     });
   throw error;
@@ -13088,10 +13088,10 @@ function Links() {
     routeModules
   } = useRemixContext(), {
     matches
-  } = useDataRouterStateContext(), links4 = React3.useMemo(() => getLinksForMatches(matches, routeModules, manifest), [matches, routeModules, manifest]);
+  } = useDataRouterStateContext(), links3 = React3.useMemo(() => getLinksForMatches(matches, routeModules, manifest), [matches, routeModules, manifest]);
   return React3.useEffect(() => {
-    links4.some((link) => "imagesizes" in link || "imagesrcset" in link) && logDeprecationOnce(linksWarning);
-  }, [links4]), /* @__PURE__ */ React3.createElement(React3.Fragment, null, links4.map((link) => {
+    links3.some((link) => "imagesizes" in link || "imagesrcset" in link) && logDeprecationOnce(linksWarning);
+  }, [links3]), /* @__PURE__ */ React3.createElement(React3.Fragment, null, links3.map((link) => {
     if (isPageLinkDescriptor(link))
       return /* @__PURE__ */ React3.createElement(PrefetchPageLinks, _extends4({
         key: link.page
@@ -13121,8 +13121,8 @@ function usePrefetchedStylesheets(matches) {
   } = useRemixContext(), [styleLinks, setStyleLinks] = React3.useState([]);
   return React3.useEffect(() => {
     let interrupted = !1;
-    return getStylesheetPrefetchLinks(matches, manifest, routeModules).then((links4) => {
-      interrupted || setStyleLinks(links4);
+    return getStylesheetPrefetchLinks(matches, manifest, routeModules).then((links3) => {
+      interrupted || setStyleLinks(links3);
     }), () => {
       interrupted = !0;
     };
@@ -13879,15 +13879,15 @@ __export(root_exports, {
   loader: () => loader
 });
 
-// app/styles/app.css
-var app_default = "/build/_assets/app-SLSXLQQQ.css";
+// app/styles/tailwind.css
+var tailwind_default = "/build/_assets/tailwind-B5UODETV.css";
 
 // public/favicon.svg
 var favicon_default = "/build/_assets/favicon-5FIZBM2K.svg";
 
 // app/root.tsx
 var import_jsx_dev_runtime2 = __toESM(require_jsx_dev_runtime()), links = () => [
-  { rel: "stylesheet", href: app_default },
+  { rel: "stylesheet", href: tailwind_default },
   {
     rel: "preconnect",
     href: "https://cdn.shopify.com"
@@ -13930,33 +13930,20 @@ function App() {
       lineNumber: 41,
       columnNumber: 7
     }, this),
-    /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("body", { children: [
-      /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("h1", { children: [
-        "Hello, ",
-        name
-      ] }, void 0, !0, {
+    /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("body", { className: "bg-black text-white", children: [
+      /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)(Outlet, {}, void 0, !1, {
         fileName: "app/root.tsx",
         lineNumber: 48,
         columnNumber: 9
       }, this),
-      /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("p", { children: "This is a custom storefront powered by Hydrogen" }, void 0, !1, {
+      /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)(ScrollRestoration2, {}, void 0, !1, {
         fileName: "app/root.tsx",
         lineNumber: 49,
         columnNumber: 9
       }, this),
-      /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)(Outlet, {}, void 0, !1, {
-        fileName: "app/root.tsx",
-        lineNumber: 50,
-        columnNumber: 9
-      }, this),
-      /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)(ScrollRestoration2, {}, void 0, !1, {
-        fileName: "app/root.tsx",
-        lineNumber: 51,
-        columnNumber: 9
-      }, this),
       /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)(Scripts, {}, void 0, !1, {
         fileName: "app/root.tsx",
-        lineNumber: 52,
+        lineNumber: 50,
         columnNumber: 9
       }, this)
     ] }, void 0, !0, {
@@ -13978,6 +13965,20 @@ var LAYOUT_QUERY = `#graphql
     }
   }
 `;
+
+// app/routes/_index.tsx
+var index_exports = {};
+__export(index_exports, {
+  default: () => Home
+});
+var import_jsx_dev_runtime3 = __toESM(require_jsx_dev_runtime());
+function Home() {
+  return /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)("h1", { className: "text-3xl font-bold underline", children: "Hello world!" }, void 0, !1, {
+    fileName: "app/routes/_index.tsx",
+    lineNumber: 2,
+    columnNumber: 10
+  }, this);
+}
 
 // node_modules/@shopify/cli-hydrogen/dist/virtual-routes/routes/graphiql.jsx
 var graphiql_exports = {};
@@ -14374,12 +14375,12 @@ async function callRouteActionRR({
 }
 async function callRouteLoaderRR({
   loadContext,
-  loader: loader4,
+  loader: loader3,
   params,
   request,
   routeId
 }) {
-  let result = await loader4({
+  let result = await loader3({
     request: stripDataParam(stripIndexParam(request)),
     context: loadContext,
     params
@@ -15288,15 +15289,15 @@ __export(virtual_root_exports, {
 });
 
 // node_modules/@shopify/cli-hydrogen/dist/virtual-routes/assets/styles.css
-var styles_default = "/build/_assets/styles-O7MQZLJO.css";
+var styles_default = "/build/_assets/styles-HC4NCUQY.css";
 
 // node_modules/@shopify/cli-hydrogen/dist/virtual-routes/assets/favicon.svg
 var favicon_default2 = "/build/_assets/favicon-5FIZBM2K.svg";
 
 // node_modules/@shopify/cli-hydrogen/dist/virtual-routes/components/Layout.jsx
-var import_jsx_dev_runtime3 = __toESM(require_jsx_dev_runtime(), 1);
+var import_jsx_dev_runtime4 = __toESM(require_jsx_dev_runtime(), 1);
 function Layout(props) {
-  return /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)("div", { className: "hydrogen-virtual-route", children: props.children }, void 0, !1, {
+  return /* @__PURE__ */ (0, import_jsx_dev_runtime4.jsxDEV)("div", { className: "hydrogen-virtual-route", children: props.children }, void 0, !1, {
     fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/components/Layout.jsx",
     lineNumber: 2,
     columnNumber: 10
@@ -15304,39 +15305,39 @@ function Layout(props) {
 }
 
 // node_modules/@shopify/cli-hydrogen/dist/virtual-routes/virtual-root.jsx
-var import_jsx_dev_runtime4 = __toESM(require_jsx_dev_runtime(), 1), links2 = () => [
+var import_jsx_dev_runtime5 = __toESM(require_jsx_dev_runtime(), 1), links2 = () => [
   { rel: "stylesheet", href: styles_default },
   { rel: "icon", type: "image/svg+xml", href: favicon_default2 }
 ];
 function App2() {
-  return /* @__PURE__ */ (0, import_jsx_dev_runtime4.jsxDEV)("html", { lang: "en", children: [
-    /* @__PURE__ */ (0, import_jsx_dev_runtime4.jsxDEV)("head", { children: [
-      /* @__PURE__ */ (0, import_jsx_dev_runtime4.jsxDEV)("meta", { charSet: "utf-8" }, void 0, !1, {
+  return /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("html", { lang: "en", children: [
+    /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("head", { children: [
+      /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("meta", { charSet: "utf-8" }, void 0, !1, {
         fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/virtual-root.jsx",
         lineNumber: 20,
         columnNumber: 7
       }, this),
-      /* @__PURE__ */ (0, import_jsx_dev_runtime4.jsxDEV)("meta", { name: "viewport", content: "width=device-width,initial-scale=1" }, void 0, !1, {
+      /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("meta", { name: "viewport", content: "width=device-width,initial-scale=1" }, void 0, !1, {
         fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/virtual-root.jsx",
         lineNumber: 21,
         columnNumber: 7
       }, this),
-      /* @__PURE__ */ (0, import_jsx_dev_runtime4.jsxDEV)("title", { children: "Hydrogen" }, void 0, !1, {
+      /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("title", { children: "Hydrogen" }, void 0, !1, {
         fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/virtual-root.jsx",
         lineNumber: 22,
         columnNumber: 7
       }, this),
-      /* @__PURE__ */ (0, import_jsx_dev_runtime4.jsxDEV)("meta", { name: "description", content: "A custom storefront powered by Hydrogen" }, void 0, !1, {
+      /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("meta", { name: "description", content: "A custom storefront powered by Hydrogen" }, void 0, !1, {
         fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/virtual-root.jsx",
         lineNumber: 23,
         columnNumber: 7
       }, this),
-      /* @__PURE__ */ (0, import_jsx_dev_runtime4.jsxDEV)(Meta, {}, void 0, !1, {
+      /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)(Meta, {}, void 0, !1, {
         fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/virtual-root.jsx",
         lineNumber: 24,
         columnNumber: 7
       }, this),
-      /* @__PURE__ */ (0, import_jsx_dev_runtime4.jsxDEV)(Links, {}, void 0, !1, {
+      /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)(Links, {}, void 0, !1, {
         fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/virtual-root.jsx",
         lineNumber: 25,
         columnNumber: 7
@@ -15346,8 +15347,8 @@ function App2() {
       lineNumber: 19,
       columnNumber: 5
     }, this),
-    /* @__PURE__ */ (0, import_jsx_dev_runtime4.jsxDEV)("body", { children: [
-      /* @__PURE__ */ (0, import_jsx_dev_runtime4.jsxDEV)(Layout, { children: /* @__PURE__ */ (0, import_jsx_dev_runtime4.jsxDEV)(Outlet, {}, void 0, !1, {
+    /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("body", { children: [
+      /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)(Layout, { children: /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)(Outlet, {}, void 0, !1, {
         fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/virtual-root.jsx",
         lineNumber: 28,
         columnNumber: 15
@@ -15356,12 +15357,12 @@ function App2() {
         lineNumber: 28,
         columnNumber: 7
       }, this),
-      /* @__PURE__ */ (0, import_jsx_dev_runtime4.jsxDEV)(ScrollRestoration2, {}, void 0, !1, {
+      /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)(ScrollRestoration2, {}, void 0, !1, {
         fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/virtual-root.jsx",
         lineNumber: 29,
         columnNumber: 7
       }, this),
-      /* @__PURE__ */ (0, import_jsx_dev_runtime4.jsxDEV)(Scripts, {}, void 0, !1, {
+      /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)(Scripts, {}, void 0, !1, {
         fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/virtual-root.jsx",
         lineNumber: 30,
         columnNumber: 7
@@ -15378,818 +15379,11 @@ function App2() {
   }, this);
 }
 
-// node_modules/@shopify/cli-hydrogen/dist/virtual-routes/routes/index.jsx
-var routes_exports = {};
-__export(routes_exports, {
-  ErrorBoundary: () => ErrorBoundary,
-  HYDROGEN_SHOP_ID: () => HYDROGEN_SHOP_ID,
-  default: () => Index,
-  links: () => links3,
-  loader: () => loader3
-});
-
-// node_modules/@shopify/cli-hydrogen/dist/virtual-routes/components/HydrogenLogoBaseBW.jsx
-var import_jsx_dev_runtime5 = __toESM(require_jsx_dev_runtime(), 1), HydrogenLogoBaseBW = (props) => /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("svg", { width: 81, height: 82, fill: "none", xmlns: "http://www.w3.org/2000/svg", ...props, children: [
-  /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("path", { d: "M39.955 81.28 2.138 61.19l12.933-6.818 14.562 7.733 12.218-6.441L27.29 47.93l12.933-6.833L78.04 61.189l-12.934 6.817L51.35 60.7l-12.236 6.457 13.774 7.308-12.933 6.817Z", fill: "#000" }, void 0, !1, {
-    fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/components/HydrogenLogoBaseBW.jsx",
-    lineNumber: 2,
-    columnNumber: 3
-  }, this),
-  /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("path", { fillRule: "evenodd", clipRule: "evenodd", d: "m40.225 0 39.953 21.227-15.073 7.945-13.756-7.308-10.096 5.328 13.775 7.309-15.075 7.945L0 21.22l15.073-7.945 14.562 7.732 10.078-5.313-14.56-7.731L40.225 0ZM29.426 7.967l14.564 7.734L29.63 23.27 15.07 15.537l-10.794 5.69 35.68 18.956 10.793-5.688-13.773-7.307L51.352 19.6l13.757 7.308 10.794-5.69-35.68-18.956-10.797 5.704Z", fill: "#000" }, void 0, !1, {
-    fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/components/HydrogenLogoBaseBW.jsx",
-    lineNumber: 3,
-    columnNumber: 3
-  }, this)
-] }, void 0, !0, {
-  fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/components/HydrogenLogoBaseBW.jsx",
-  lineNumber: 1,
-  columnNumber: 39
-}, this);
-
-// node_modules/@shopify/cli-hydrogen/dist/virtual-routes/components/HydrogenLogoBaseColor.jsx
-var import_jsx_dev_runtime6 = __toESM(require_jsx_dev_runtime(), 1), HydrogenLogoBaseColor = (props) => /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)("svg", { width: 76, height: 81, fill: "none", xmlns: "http://www.w3.org/2000/svg", ...props, children: [
-  /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)("path", { d: "M37.817 80.149 0 60.057l12.934-6.817 14.561 7.733 12.218-6.441-14.561-7.733 12.933-6.833 37.818 20.091-12.934 6.817-13.757-7.307-12.236 6.457 13.775 7.308-12.934 6.817Z", fill: "#000" }, void 0, !1, {
-    fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/components/HydrogenLogoBaseColor.jsx",
-    lineNumber: 2,
-    columnNumber: 3
-  }, this),
-  /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)("path", { d: "M37.818 40.183 0 20.092l12.934-6.818 14.562 7.733 12.218-6.441-14.562-7.733L38.086 0l37.817 20.091-12.934 6.817-13.756-7.307-12.236 6.457 13.774 7.308-12.933 6.817Z", fill: "url(#a)" }, void 0, !1, {
-    fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/components/HydrogenLogoBaseColor.jsx",
-    lineNumber: 3,
-    columnNumber: 3
-  }, this),
-  /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)("defs", { children: /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)("linearGradient", { id: "a", x1: 74.48, y1: 21.654, x2: 18.735, y2: 51.694, gradientUnits: "userSpaceOnUse", children: [
-    /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)("stop", { offset: 2e-3, stopColor: "#430470" }, void 0, !1, {
-      fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/components/HydrogenLogoBaseColor.jsx",
-      lineNumber: 5,
-      columnNumber: 5
-    }, this),
-    /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)("stop", { offset: 0.385, stopColor: "#8E01F0" }, void 0, !1, {
-      fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/components/HydrogenLogoBaseColor.jsx",
-      lineNumber: 6,
-      columnNumber: 5
-    }, this),
-    /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)("stop", { offset: 0.635, stopColor: "#354CF6" }, void 0, !1, {
-      fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/components/HydrogenLogoBaseColor.jsx",
-      lineNumber: 7,
-      columnNumber: 5
-    }, this),
-    /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)("stop", { offset: 1, stopColor: "#01FFFF" }, void 0, !1, {
-      fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/components/HydrogenLogoBaseColor.jsx",
-      lineNumber: 8,
-      columnNumber: 5
-    }, this)
-  ] }, void 0, !0, {
-    fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/components/HydrogenLogoBaseColor.jsx",
-    lineNumber: 4,
-    columnNumber: 9
-  }, this) }, void 0, !1, {
-    fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/components/HydrogenLogoBaseColor.jsx",
-    lineNumber: 4,
-    columnNumber: 3
-  }, this)
-] }, void 0, !0, {
-  fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/components/HydrogenLogoBaseColor.jsx",
-  lineNumber: 1,
-  columnNumber: 42
-}, this);
-
-// node_modules/@shopify/cli-hydrogen/dist/virtual-routes/components/IconDiscord.jsx
-var import_jsx_dev_runtime7 = __toESM(require_jsx_dev_runtime(), 1), IconDiscord = (props) => /* @__PURE__ */ (0, import_jsx_dev_runtime7.jsxDEV)("svg", { width: 26, height: 20, fill: "none", xmlns: "http://www.w3.org/2000/svg", ...props, children: /* @__PURE__ */ (0, import_jsx_dev_runtime7.jsxDEV)("path", { d: "M21.19 1.675A19.91 19.91 0 0 0 16.03 0c-.223.415-.482.973-.661 1.418a18.355 18.355 0 0 0-5.72 0A15.367 15.367 0 0 0 8.98 0a19.844 19.844 0 0 0-5.165 1.68C.55 6.776-.336 11.747.106 16.647c2.167 1.67 4.266 2.686 6.33 3.35.51-.724.964-1.495 1.356-2.306a13.149 13.149 0 0 1-2.135-1.073c.179-.137.354-.28.523-.428 4.116 1.989 8.588 1.989 12.655 0 .172.148.347.291.524.428a13.12 13.12 0 0 1-2.139 1.075c.392.81.844 1.582 1.356 2.306 2.066-.664 4.167-1.68 6.333-3.352.52-5.68-.887-10.606-3.718-14.973ZM8.353 13.635c-1.235 0-2.249-1.192-2.249-2.643 0-1.45.992-2.644 2.25-2.644 1.257 0 2.27 1.191 2.248 2.644.002 1.45-.991 2.642-2.249 2.642Zm8.311 0c-1.235 0-2.249-1.192-2.249-2.643 0-1.45.992-2.644 2.25-2.644 1.257 0 2.27 1.191 2.248 2.644 0 1.45-.991 2.642-2.249 2.642Z", fill: "#5C5F62" }, void 0, !1, {
-  fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/components/IconDiscord.jsx",
-  lineNumber: 1,
-  columnNumber: 118
-}, this) }, void 0, !1, {
-  fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/components/IconDiscord.jsx",
-  lineNumber: 1,
-  columnNumber: 32
-}, this);
-
-// node_modules/@shopify/cli-hydrogen/dist/virtual-routes/components/IconGithub.jsx
-var import_jsx_dev_runtime8 = __toESM(require_jsx_dev_runtime(), 1), IconGithub = (props) => /* @__PURE__ */ (0, import_jsx_dev_runtime8.jsxDEV)("svg", { width: 20, height: 20, fill: "none", xmlns: "http://www.w3.org/2000/svg", ...props, children: /* @__PURE__ */ (0, import_jsx_dev_runtime8.jsxDEV)("path", { fillRule: "evenodd", clipRule: "evenodd", d: "M9.997 0C4.473 0 0 4.588 0 10.253c0 4.537 2.862 8.369 6.835 9.727.5.09.687-.218.687-.487 0-.243-.012-1.05-.012-1.91-2.512.475-3.161-.627-3.361-1.204-.113-.295-.6-1.205-1.025-1.448-.35-.192-.85-.667-.013-.68.788-.012 1.35.744 1.537 1.052.9 1.55 2.337 1.114 2.912.845.087-.666.35-1.115.637-1.371-2.224-.256-4.548-1.14-4.548-5.062 0-1.115.387-2.038 1.024-2.756-.1-.256-.45-1.307.1-2.717 0 0 .838-.269 2.75 1.051.8-.23 1.649-.346 2.499-.346.85 0 1.699.115 2.499.346 1.912-1.333 2.749-1.05 2.749-1.05.55 1.409.2 2.46.1 2.716.637.718 1.025 1.628 1.025 2.756 0 3.934-2.337 4.806-4.561 5.062.362.32.674.936.674 1.897 0 1.371-.012 2.473-.012 2.82 0 .268.187.589.687.486a10.036 10.036 0 0 0 4.93-3.74 10.45 10.45 0 0 0 1.88-5.987C19.993 4.588 15.52 0 9.997 0Z", fill: "#5C5F62" }, void 0, !1, {
-  fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/components/IconGithub.jsx",
-  lineNumber: 1,
-  columnNumber: 117
-}, this) }, void 0, !1, {
-  fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/components/IconGithub.jsx",
-  lineNumber: 1,
-  columnNumber: 31
-}, this);
-
-// node_modules/@shopify/cli-hydrogen/dist/virtual-routes/components/IconTwitter.jsx
-var import_jsx_dev_runtime9 = __toESM(require_jsx_dev_runtime(), 1), IconTwitter = (props) => /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)("svg", { width: 23, height: 20, fill: "none", xmlns: "http://www.w3.org/2000/svg", ...props, children: /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)("path", { d: "M20.53 4.979c.014.217.014.434.014.653C20.544 12.305 15.824 20 7.193 20v-.004C4.643 20 2.146 19.214 0 17.732c.37.048.743.072 1.117.073 2.113.002 4.165-.76 5.828-2.166-2.008-.04-3.77-1.45-4.384-3.506a4.356 4.356 0 0 0 2.118-.087C2.49 11.57.915 9.5.915 7.096v-.064a4.414 4.414 0 0 0 2.13.632C.983 6.18.348 3.229 1.593.92c2.382 3.155 5.897 5.073 9.67 5.276-.378-1.754.139-3.592 1.358-4.825 1.89-1.912 4.862-1.814 6.639.22A9.023 9.023 0 0 0 22.24.364c-.35 1.17-1.084 2.162-2.063 2.793a8.822 8.822 0 0 0 2.694-.795A9.97 9.97 0 0 1 20.53 4.98Z", fill: "#5C5F62" }, void 0, !1, {
-  fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/components/IconTwitter.jsx",
-  lineNumber: 1,
-  columnNumber: 118
-}, this) }, void 0, !1, {
-  fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/components/IconTwitter.jsx",
-  lineNumber: 1,
-  columnNumber: 32
-}, this);
-
-// node_modules/@shopify/cli-hydrogen/dist/virtual-routes/components/IconBanner.jsx
-var import_jsx_dev_runtime10 = __toESM(require_jsx_dev_runtime(), 1), IconBanner = (props) => /* @__PURE__ */ (0, import_jsx_dev_runtime10.jsxDEV)("svg", { width: 32, height: 36, fill: "none", xmlns: "http://www.w3.org/2000/svg", ...props, children: [
-  /* @__PURE__ */ (0, import_jsx_dev_runtime10.jsxDEV)("path", { fill: "#000", d: "M0 9.726h1.455v1.455H0z" }, void 0, !1, {
-    fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/components/IconBanner.jsx",
-    lineNumber: 2,
-    columnNumber: 3
-  }, this),
-  /* @__PURE__ */ (0, import_jsx_dev_runtime10.jsxDEV)("path", { fill: "#E172AC", d: "M1.454 9.726h1.455v1.455H1.454zM13.091 3.907h1.455v1.455h-1.455zM24.727 9.726h1.455v1.455h-1.455zM24.727 24.271h1.455v1.455h-1.455zM13.091 30.09h1.455v1.455h-1.455zM1.454 24.271h1.455v1.455H1.454z" }, void 0, !1, {
-    fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/components/IconBanner.jsx",
-    lineNumber: 3,
-    columnNumber: 3
-  }, this),
-  /* @__PURE__ */ (0, import_jsx_dev_runtime10.jsxDEV)("path", { fill: "#AC217D", d: "M5.818 9.726h1.455v1.455H5.818zM17.454 3.907h1.455v1.455h-1.455zM29.091 9.726h1.455v1.455h-1.455zM21.818 16.998h1.455v1.455h-1.455zM21.818 18.454h1.455v1.455h-1.455zM20.363 24.271h1.455v1.455h-1.455zM20.363 11.181h1.455v1.455h-1.455zM29.091 24.271h1.455v1.455h-1.455zM17.455 30.09h1.455v1.455h-1.455zM5.818 24.271h1.455v1.455H5.818z" }, void 0, !1, {
-    fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/components/IconBanner.jsx",
-    lineNumber: 4,
-    columnNumber: 3
-  }, this),
-  /* @__PURE__ */ (0, import_jsx_dev_runtime10.jsxDEV)("path", { fill: "#000", d: "M7.273 9.726h1.455v1.455H7.273zM1.454 8.271h1.455v1.455H1.454zM5.818 8.271h1.455v1.455H5.818zM2.909 6.817h1.455v1.455H2.909z" }, void 0, !1, {
-    fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/components/IconBanner.jsx",
-    lineNumber: 5,
-    columnNumber: 3
-  }, this),
-  /* @__PURE__ */ (0, import_jsx_dev_runtime10.jsxDEV)("path", { fill: "#D43694", d: "M2.909 9.726h1.455v1.455H2.909zM14.546 3.907h1.455v1.455h-1.455zM26.182 9.726h1.455v1.455h-1.455zM18.909 11.181h1.455v1.455h-1.455z" }, void 0, !1, {
-    fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/components/IconBanner.jsx",
-    lineNumber: 6,
-    columnNumber: 3
-  }, this),
-  /* @__PURE__ */ (0, import_jsx_dev_runtime10.jsxDEV)("path", { fill: "#D43694", d: "M20.363 12.635h1.455v1.455h-1.455zM20.363 14.09h1.455v1.455h-1.455z" }, void 0, !1, {
-    fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/components/IconBanner.jsx",
-    lineNumber: 7,
-    columnNumber: 3
-  }, this),
-  /* @__PURE__ */ (0, import_jsx_dev_runtime10.jsxDEV)("path", { fill: "#D43694", d: "M20.363 15.544h1.455v1.455h-1.455zM11.636 11.181h1.455v1.455h-1.455z" }, void 0, !1, {
-    fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/components/IconBanner.jsx",
-    lineNumber: 8,
-    columnNumber: 3
-  }, this),
-  /* @__PURE__ */ (0, import_jsx_dev_runtime10.jsxDEV)("path", { fill: "#D43694", d: "M10.182 12.635h1.455v1.455h-1.455zM10.182 14.09h1.455v1.455h-1.455z" }, void 0, !1, {
-    fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/components/IconBanner.jsx",
-    lineNumber: 9,
-    columnNumber: 3
-  }, this),
-  /* @__PURE__ */ (0, import_jsx_dev_runtime10.jsxDEV)("path", { fill: "#D43694", d: "M10.182 15.544h1.455v1.455h-1.455zM10.182 19.908h1.455v1.455h-1.455z" }, void 0, !1, {
-    fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/components/IconBanner.jsx",
-    lineNumber: 10,
-    columnNumber: 3
-  }, this),
-  /* @__PURE__ */ (0, import_jsx_dev_runtime10.jsxDEV)("path", { fill: "#D43694", d: "M10.182 21.362h1.455v1.455h-1.455zM10.182 22.817h1.455v1.455h-1.455z" }, void 0, !1, {
-    fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/components/IconBanner.jsx",
-    lineNumber: 11,
-    columnNumber: 3
-  }, this),
-  /* @__PURE__ */ (0, import_jsx_dev_runtime10.jsxDEV)("path", { fill: "#D43694", d: "M11.636 24.271h1.455v1.455h-1.455zM20.363 19.908h1.455v1.455h-1.455z" }, void 0, !1, {
-    fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/components/IconBanner.jsx",
-    lineNumber: 12,
-    columnNumber: 3
-  }, this),
-  /* @__PURE__ */ (0, import_jsx_dev_runtime10.jsxDEV)("path", { fill: "#D43694", d: "M20.363 21.362h1.455v1.455h-1.455zM20.363 22.817h1.455v1.455h-1.455z" }, void 0, !1, {
-    fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/components/IconBanner.jsx",
-    lineNumber: 13,
-    columnNumber: 3
-  }, this),
-  /* @__PURE__ */ (0, import_jsx_dev_runtime10.jsxDEV)("path", { fill: "#D43694", d: "M18.909 24.271h1.455v1.455h-1.455zM26.182 24.271h1.455v1.455h-1.455zM14.545 30.09H16v1.455h-1.455zM2.909 24.271h1.455v1.455H2.909zM2.909 11.181h1.455v1.455H2.909zM14.546 5.361h1.455v1.455h-1.455zM26.182 11.181h1.455v1.455h-1.455zM26.182 25.726h1.455v1.455h-1.455z" }, void 0, !1, {
-    fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/components/IconBanner.jsx",
-    lineNumber: 14,
-    columnNumber: 3
-  }, this),
-  /* @__PURE__ */ (0, import_jsx_dev_runtime10.jsxDEV)("path", { fill: "#D43694", d: "M14.546 31.544h1.455v1.455h-1.455zM2.909 25.726h1.455v1.455H2.909z" }, void 0, !1, {
-    fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/components/IconBanner.jsx",
-    lineNumber: 15,
-    columnNumber: 3
-  }, this),
-  /* @__PURE__ */ (0, import_jsx_dev_runtime10.jsxDEV)("path", { fill: "#000", d: "M4.364 6.817h1.455v1.455H4.364z" }, void 0, !1, {
-    fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/components/IconBanner.jsx",
-    lineNumber: 16,
-    columnNumber: 3
-  }, this),
-  /* @__PURE__ */ (0, import_jsx_dev_runtime10.jsxDEV)("path", { fill: "#D43694", d: "M4.364 9.726h1.455v1.455H4.364zM16 3.907h1.455v1.455H16zM27.637 9.726h1.455v1.455h-1.455zM27.637 24.271h1.455v1.455h-1.455zM16 30.09h1.455v1.455H16zM4.364 24.271h1.455v1.455H4.364z" }, void 0, !1, {
-    fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/components/IconBanner.jsx",
-    lineNumber: 17,
-    columnNumber: 3
-  }, this),
-  /* @__PURE__ */ (0, import_jsx_dev_runtime10.jsxDEV)("path", { fill: "#D43694", d: "M4.364 11.181h1.455v1.455H4.364zM16 5.361h1.455v1.455H16zM27.637 11.181h1.455v1.455h-1.455zM27.637 25.726h1.455v1.455h-1.455zM16 31.544h1.455v1.455H16zM4.364 25.726h1.455v1.455H4.364z" }, void 0, !1, {
-    fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/components/IconBanner.jsx",
-    lineNumber: 18,
-    columnNumber: 3
-  }, this),
-  /* @__PURE__ */ (0, import_jsx_dev_runtime10.jsxDEV)("path", { fill: "#E172AC", d: "M2.909 8.271h1.455v1.455H2.909zM14.545 2.453H16v1.455h-1.455zM26.182 8.271h1.455v1.455h-1.455zM26.182 22.817h1.455v1.455h-1.455zM14.546 28.635h1.455v1.455h-1.455zM2.909 22.817h1.455v1.455H2.909z" }, void 0, !1, {
-    fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/components/IconBanner.jsx",
-    lineNumber: 19,
-    columnNumber: 3
-  }, this),
-  /* @__PURE__ */ (0, import_jsx_dev_runtime10.jsxDEV)("path", { fill: "#AC217D", d: "M2.909 12.635h1.455v1.455H2.909zM14.545 6.817H16v1.455h-1.455zM26.182 12.635h1.455v1.455h-1.455zM26.182 27.181h1.455v1.455h-1.455zM14.546 32.998h1.455v1.455h-1.455zM2.909 27.181h1.455v1.455H2.909z" }, void 0, !1, {
-    fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/components/IconBanner.jsx",
-    lineNumber: 20,
-    columnNumber: 3
-  }, this),
-  /* @__PURE__ */ (0, import_jsx_dev_runtime10.jsxDEV)("path", { fill: "#E172AC", d: "M4.364 8.271h1.455v1.455H4.364zM16 2.453h1.455v1.455H16zM27.637 8.271h1.455v1.455h-1.455zM27.637 22.817h1.455v1.455h-1.455zM16 28.635h1.455v1.455H16zM4.364 22.817h1.455v1.455H4.364z" }, void 0, !1, {
-    fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/components/IconBanner.jsx",
-    lineNumber: 21,
-    columnNumber: 3
-  }, this),
-  /* @__PURE__ */ (0, import_jsx_dev_runtime10.jsxDEV)("path", { fill: "#AC217D", d: "M4.364 12.635h1.455v1.455H4.364zM16 6.817h1.455v1.455H16zM27.637 12.635h1.455v1.455h-1.455zM27.637 27.181h1.455v1.455h-1.455zM16 32.998h1.455v1.455H16zM4.364 27.181h1.455v1.455H4.364z" }, void 0, !1, {
-    fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/components/IconBanner.jsx",
-    lineNumber: 22,
-    columnNumber: 3
-  }, this),
-  /* @__PURE__ */ (0, import_jsx_dev_runtime10.jsxDEV)("path", { fill: "#000", d: "M2.909 14.09h1.455v1.455H2.909zM4.364 14.09h1.455v1.455H4.364zM0 11.181h1.455v1.455H0z" }, void 0, !1, {
-    fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/components/IconBanner.jsx",
-    lineNumber: 23,
-    columnNumber: 3
-  }, this),
-  /* @__PURE__ */ (0, import_jsx_dev_runtime10.jsxDEV)("path", { fill: "#000", d: "M1.454 12.635h1.455v1.455H1.454z" }, void 0, !1, {
-    fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/components/IconBanner.jsx",
-    lineNumber: 24,
-    columnNumber: 3
-  }, this),
-  /* @__PURE__ */ (0, import_jsx_dev_runtime10.jsxDEV)("path", { fill: "#E172AC", d: "M1.454 11.181h1.455v1.455H1.454zM8.727 16.998h1.455v1.455H8.727zM10.182 11.181h1.455v1.455h-1.455zM10.182 24.271h1.455v1.455h-1.455zM8.727 18.454h1.455v1.455H8.727zM13.091 5.361h1.455v1.455h-1.455zM24.727 11.181h1.455v1.455h-1.455zM24.727 25.726h1.455v1.455h-1.455zM13.091 31.544h1.455v1.455h-1.455zM1.454 25.726h1.455v1.455H1.454z" }, void 0, !1, {
-    fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/components/IconBanner.jsx",
-    lineNumber: 25,
-    columnNumber: 3
-  }, this),
-  /* @__PURE__ */ (0, import_jsx_dev_runtime10.jsxDEV)("path", { fill: "#AC217D", d: "M5.818 11.181h1.455v1.455H5.818zM17.454 5.361h1.455v1.455h-1.455zM29.091 11.181h1.455v1.455h-1.455zM29.091 25.726h1.455v1.455h-1.455zM17.454 31.544h1.455v1.455h-1.455zM5.818 25.726h1.455v1.455H5.818z" }, void 0, !1, {
-    fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/components/IconBanner.jsx",
-    lineNumber: 26,
-    columnNumber: 3
-  }, this),
-  /* @__PURE__ */ (0, import_jsx_dev_runtime10.jsxDEV)("path", { fill: "#000", d: "M5.818 12.635h1.455v1.455H5.818zM7.273 11.181h1.455v1.455H7.273zM0 24.271h1.455v1.455H0zM23.273 9.726h1.455v1.455h-1.455zM7.273 24.271h1.455v1.455H7.273zM30.546 9.726h1.455v1.455h-1.455zM1.455 22.817H2.91v1.455H1.455zM24.727 8.271h1.455v1.455h-1.455zM5.818 22.817h1.455v1.455H5.818zM29.091 8.271h1.455v1.455h-1.455zM2.909 21.362h1.455v1.455H2.909z" }, void 0, !1, {
-    fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/components/IconBanner.jsx",
-    lineNumber: 27,
-    columnNumber: 3
-  }, this),
-  /* @__PURE__ */ (0, import_jsx_dev_runtime10.jsxDEV)("path", { fill: "#000", d: "M26.182 6.817h1.455v1.455h-1.455zM4.364 21.362h1.455v1.455H4.364zM27.637 6.817h1.455v1.455h-1.455zM2.909 28.635h1.455v1.455H2.909zM26.182 14.09h1.455v1.455h-1.455zM4.364 28.635h1.455v1.455H4.364zM27.637 14.09h1.455v1.455h-1.455zM1.454 27.181h1.455v1.455H1.454zM24.727 12.635h1.455v1.455h-1.455zM0 25.726h1.455v1.455H0z" }, void 0, !1, {
-    fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/components/IconBanner.jsx",
-    lineNumber: 28,
-    columnNumber: 3
-  }, this),
-  /* @__PURE__ */ (0, import_jsx_dev_runtime10.jsxDEV)("path", { fill: "#000", d: "M23.273 11.181h1.455v1.455h-1.455zM5.818 27.181h1.455v1.455H5.818zM29.091 12.635h1.455v1.455h-1.455zM7.273 25.726h1.455v1.455H7.273zM30.546 11.181h1.455v1.455h-1.455zM23.273 24.271h1.455v1.455h-1.455zM11.636 30.09h1.455v1.455h-1.455zM11.636 3.907h1.455v1.455h-1.455zM18.909 30.09h1.455v1.455h-1.455zM30.546 24.271h1.455v1.455h-1.455zM13.091 28.635h1.455v1.455h-1.455zM18.909 3.907h1.455v1.455h-1.455zM17.454 28.635h1.455v1.455h-1.455z" }, void 0, !1, {
-    fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/components/IconBanner.jsx",
-    lineNumber: 29,
-    columnNumber: 3
-  }, this),
-  /* @__PURE__ */ (0, import_jsx_dev_runtime10.jsxDEV)("path", { fill: "#000", d: "M24.727 22.817h1.455v1.455h-1.455zM14.546 27.181h1.455v1.455h-1.455zM13.091 2.453h1.455v1.455h-1.455z" }, void 0, !1, {
-    fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/components/IconBanner.jsx",
-    lineNumber: 30,
-    columnNumber: 3
-  }, this),
-  /* @__PURE__ */ (0, import_jsx_dev_runtime10.jsxDEV)("path", { fill: "#000", d: "M16 27.181h1.455v1.455H16zM29.091 22.817h1.455v1.455h-1.455zM14.545 34.454H16v1.455h-1.455zM17.455 2.453h1.455v1.455h-1.455zM16 34.454h1.455v1.455H16zM26.182 21.362h1.455v1.455h-1.455zM13.091 32.998h1.455v1.455h-1.455zM14.546.998h1.455v1.455h-1.455zM11.636 31.544h1.455v1.455h-1.455zM27.637 21.362h1.455v1.455h-1.455zM17.454 32.998h1.455v1.455h-1.455z" }, void 0, !1, {
-    fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/components/IconBanner.jsx",
-    lineNumber: 31,
-    columnNumber: 3
-  }, this),
-  /* @__PURE__ */ (0, import_jsx_dev_runtime10.jsxDEV)("path", { fill: "#000", d: "M16 .998h1.455v1.455H16zM18.909 31.544h1.455v1.455h-1.455zM26.182 28.635h1.455v1.455h-1.455zM14.546 8.271h1.455v1.455h-1.455zM27.637 28.635h1.455v1.455h-1.455z" }, void 0, !1, {
-    fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/components/IconBanner.jsx",
-    lineNumber: 32,
-    columnNumber: 3
-  }, this),
-  /* @__PURE__ */ (0, import_jsx_dev_runtime10.jsxDEV)("path", { fill: "#000", d: "M16 8.271h1.455v1.455H16zM24.727 27.181h1.455v1.455h-1.455zM13.091 6.817h1.455v1.455h-1.455zM23.273 25.726h1.455v1.455h-1.455zM11.636 5.361h1.455v1.455h-1.455zM29.091 27.181h1.455v1.455h-1.455zM17.455 6.817h1.455v1.455h-1.455zM30.546 25.726h1.455v1.455h-1.455zM18.909 5.361h1.455v1.455h-1.455zM8.727 11.181h1.455v1.455H8.727z" }, void 0, !1, {
-    fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/components/IconBanner.jsx",
-    lineNumber: 33,
-    columnNumber: 3
-  }, this),
-  /* @__PURE__ */ (0, import_jsx_dev_runtime10.jsxDEV)("path", { fill: "#000", d: "M8.727 12.635h1.455v1.455H8.727zM8.727 19.908h1.455v1.455H8.727zM21.818 19.908h1.455v1.455h-1.455zM21.818 11.181h1.455v1.455h-1.455z" }, void 0, !1, {
-    fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/components/IconBanner.jsx",
-    lineNumber: 34,
-    columnNumber: 3
-  }, this),
-  /* @__PURE__ */ (0, import_jsx_dev_runtime10.jsxDEV)("path", { fill: "#000", d: "M8.727 21.362h1.455v1.455H8.727zM21.818 21.362h1.455v1.455h-1.455zM8.727 14.09h1.455v1.455H8.727zM21.818 12.635h1.455v1.455h-1.455zM8.727 22.817h1.455v1.455H8.727z" }, void 0, !1, {
-    fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/components/IconBanner.jsx",
-    lineNumber: 35,
-    columnNumber: 3
-  }, this),
-  /* @__PURE__ */ (0, import_jsx_dev_runtime10.jsxDEV)("path", { fill: "#000", d: "M8.727 24.271h1.455v1.455H8.727zM7.273 16.998h1.455v1.455H7.273zM21.818 22.817h1.455v1.455h-1.455zM23.273 16.998h1.455v1.455h-1.455z" }, void 0, !1, {
-    fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/components/IconBanner.jsx",
-    lineNumber: 36,
-    columnNumber: 3
-  }, this),
-  /* @__PURE__ */ (0, import_jsx_dev_runtime10.jsxDEV)("path", { fill: "#000", d: "M21.818 24.271h1.455v1.455h-1.455zM8.727 15.544h1.455v1.455H8.727zM21.818 14.09h1.455v1.455h-1.455zM7.273 18.454h1.455v1.455H7.273z" }, void 0, !1, {
-    fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/components/IconBanner.jsx",
-    lineNumber: 37,
-    columnNumber: 3
-  }, this),
-  /* @__PURE__ */ (0, import_jsx_dev_runtime10.jsxDEV)("path", { fill: "#000", d: "M21.818 15.544h1.455v1.455h-1.455zM23.273 18.454h1.455v1.455h-1.455zM11.636 12.635h1.455v1.455h-1.455zM11.636 19.908h1.455v1.455h-1.455zM18.909 19.908h1.455v1.455h-1.455zM18.909 12.635h1.455v1.455h-1.455zM11.636 14.09h1.455v1.455h-1.455z" }, void 0, !1, {
-    fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/components/IconBanner.jsx",
-    lineNumber: 38,
-    columnNumber: 3
-  }, this),
-  /* @__PURE__ */ (0, import_jsx_dev_runtime10.jsxDEV)("path", { fill: "#000", d: "M11.636 21.362h1.455v1.455h-1.455zM18.909 21.362h1.455v1.455h-1.455zM18.909 14.09h1.455v1.455h-1.455zM10.182 16.998h1.455v1.455h-1.455zM20.363 16.998h1.455v1.455h-1.455z" }, void 0, !1, {
-    fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/components/IconBanner.jsx",
-    lineNumber: 39,
-    columnNumber: 3
-  }, this),
-  /* @__PURE__ */ (0, import_jsx_dev_runtime10.jsxDEV)("path", { fill: "#000", d: "M11.636 15.544h1.455v1.455h-1.455zM11.636 22.817h1.455v1.455h-1.455zM18.909 22.817h1.455v1.455h-1.455zM18.909 15.544h1.455v1.455h-1.455zM13.091 24.271h1.455v1.455h-1.455zM17.454 24.271h1.455v1.455h-1.455zM13.091 25.726h1.455v1.455h-1.455zM17.454 25.726h1.455v1.455h-1.455zM11.636 25.726h1.455v1.455h-1.455zM20.363 25.726h1.455v1.455h-1.455z" }, void 0, !1, {
-    fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/components/IconBanner.jsx",
-    lineNumber: 40,
-    columnNumber: 3
-  }, this),
-  /* @__PURE__ */ (0, import_jsx_dev_runtime10.jsxDEV)("path", { fill: "#000", d: "M10.182 25.726h1.455v1.455h-1.455zM18.909 25.726h1.455v1.455h-1.455zM10.182 18.454h1.455v1.455h-1.455zM20.363 18.454h1.455v1.455h-1.455zM10.182 9.726h1.455v1.455h-1.455zM18.909 9.726h1.455v1.455h-1.455z" }, void 0, !1, {
-    fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/components/IconBanner.jsx",
-    lineNumber: 41,
-    columnNumber: 3
-  }, this),
-  /* @__PURE__ */ (0, import_jsx_dev_runtime10.jsxDEV)("path", { fill: "#000", d: "M11.636 9.726h1.455v1.455h-1.455zM20.363 9.726h1.455v1.455h-1.455zM13.091 9.726h1.455v1.455h-1.455zM17.454 9.726h1.455v1.455h-1.455z" }, void 0, !1, {
-    fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/components/IconBanner.jsx",
-    lineNumber: 42,
-    columnNumber: 3
-  }, this),
-  /* @__PURE__ */ (0, import_jsx_dev_runtime10.jsxDEV)("path", { fill: "#000", d: "M13.091 11.181h1.455v1.455h-1.455zM17.454 11.181h1.455v1.455h-1.455z" }, void 0, !1, {
-    fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/components/IconBanner.jsx",
-    lineNumber: 43,
-    columnNumber: 3
-  }, this)
-] }, void 0, !0, {
-  fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/components/IconBanner.jsx",
-  lineNumber: 1,
-  columnNumber: 31
-}, this);
-
-// node_modules/@shopify/cli-hydrogen/dist/virtual-routes/components/IconError.jsx
-var import_jsx_dev_runtime11 = __toESM(require_jsx_dev_runtime(), 1), IconError = (props) => /* @__PURE__ */ (0, import_jsx_dev_runtime11.jsxDEV)("svg", { width: 32, height: 32, fill: "none", xmlns: "http://www.w3.org/2000/svg", ...props, children: [
-  /* @__PURE__ */ (0, import_jsx_dev_runtime11.jsxDEV)("path", { fill: "#000", d: "M6 18h20v2H6zM30 8h2v16h-2zM0 8h2v16H0z" }, void 0, !1, {
-    fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/components/IconError.jsx",
-    lineNumber: 2,
-    columnNumber: 3
-  }, this),
-  /* @__PURE__ */ (0, import_jsx_dev_runtime11.jsxDEV)("path", { fill: "#F63310", d: "M2 8h2v16H2zM4 6h2v4H4zM6 4h2v4H6zM8 2h2v4H8zM24 4h2v2h-2zM26 6h2v2h-2z" }, void 0, !1, {
-    fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/components/IconError.jsx",
-    lineNumber: 3,
-    columnNumber: 3
-  }, this),
-  /* @__PURE__ */ (0, import_jsx_dev_runtime11.jsxDEV)("path", { fill: "#74170B", d: "M26 24h2v2h-2zM28 22h2v2h-2zM24 26h2v2h-2zM22 28h2v2h-2z" }, void 0, !1, {
-    fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/components/IconError.jsx",
-    lineNumber: 4,
-    columnNumber: 3
-  }, this),
-  /* @__PURE__ */ (0, import_jsx_dev_runtime11.jsxDEV)("path", { fill: "#971C06", d: "M6 26h2v2H6zM4 24h2v2H4zM4 18h2v2H4zM26 18h2v2h-2zM26 12h2v2h-2z" }, void 0, !1, {
-    fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/components/IconError.jsx",
-    lineNumber: 5,
-    columnNumber: 3
-  }, this),
-  /* @__PURE__ */ (0, import_jsx_dev_runtime11.jsxDEV)("path", { fill: "#D62C0D", d: "M26 8h2v4h-2zM4 10h2v2H4zM8 6h18v2H8zM10 4h14v2H10zM6 8h20v2H6z" }, void 0, !1, {
-    fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/components/IconError.jsx",
-    lineNumber: 6,
-    columnNumber: 3
-  }, this),
-  /* @__PURE__ */ (0, import_jsx_dev_runtime11.jsxDEV)("path", { fill: "#971C06", d: "M28 10h2v12h-2zM8 28h14v2H8z" }, void 0, !1, {
-    fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/components/IconError.jsx",
-    lineNumber: 7,
-    columnNumber: 3
-  }, this),
-  /* @__PURE__ */ (0, import_jsx_dev_runtime11.jsxDEV)("path", { fill: "#D62C0D", d: "M26 20h2v2h-2zM4 20h2v2H4z" }, void 0, !1, {
-    fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/components/IconError.jsx",
-    lineNumber: 8,
-    columnNumber: 3
-  }, this),
-  /* @__PURE__ */ (0, import_jsx_dev_runtime11.jsxDEV)("path", { fill: "#F63310", d: "M4 12h2v2H4z" }, void 0, !1, {
-    fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/components/IconError.jsx",
-    lineNumber: 9,
-    columnNumber: 3
-  }, this),
-  /* @__PURE__ */ (0, import_jsx_dev_runtime11.jsxDEV)("path", { fill: "#971C06", d: "M6 20h20v2H6z" }, void 0, !1, {
-    fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/components/IconError.jsx",
-    lineNumber: 10,
-    columnNumber: 3
-  }, this),
-  /* @__PURE__ */ (0, import_jsx_dev_runtime11.jsxDEV)("path", { fill: "#F63310", d: "M28 8h2v2h-2zM10 2h14v2H10zM6 10h20v2H6z" }, void 0, !1, {
-    fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/components/IconError.jsx",
-    lineNumber: 11,
-    columnNumber: 3
-  }, this),
-  /* @__PURE__ */ (0, import_jsx_dev_runtime11.jsxDEV)("path", { fill: "#D62C0D", d: "M4 22h24v2H4zM6 24h20v2H6zM8 26h16v2H8z" }, void 0, !1, {
-    fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/components/IconError.jsx",
-    lineNumber: 12,
-    columnNumber: 3
-  }, this),
-  /* @__PURE__ */ (0, import_jsx_dev_runtime11.jsxDEV)("path", { fill: "#000", d: "M6 12h20v2H6z" }, void 0, !1, {
-    fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/components/IconError.jsx",
-    lineNumber: 13,
-    columnNumber: 3
-  }, this),
-  /* @__PURE__ */ (0, import_jsx_dev_runtime11.jsxDEV)("path", { fill: "#fff", d: "M6 14h20v2H6zM6 16h2v2H6z" }, void 0, !1, {
-    fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/components/IconError.jsx",
-    lineNumber: 14,
-    columnNumber: 3
-  }, this),
-  /* @__PURE__ */ (0, import_jsx_dev_runtime11.jsxDEV)("path", { fill: "#ECEDEE", d: "M8 16h18v2H8z" }, void 0, !1, {
-    fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/components/IconError.jsx",
-    lineNumber: 15,
-    columnNumber: 3
-  }, this),
-  /* @__PURE__ */ (0, import_jsx_dev_runtime11.jsxDEV)("path", { fill: "#000", d: "M4 14h2v4H4zM26 14h2v4h-2zM2 6h2v2H2zM4 4h2v2H4zM6 2h2v2H6zM24 2h2v2h-2zM26 4h2v2h-2zM26 26h2v2h-2zM24 28h2v2h-2zM6 28h2v2H6zM4 26h2v2H4zM2 24h2v2H2zM8 30h16v2H8zM28 6h2v2h-2zM28 24h2v2h-2zM8 0h16v2H8z" }, void 0, !1, {
-    fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/components/IconError.jsx",
-    lineNumber: 16,
-    columnNumber: 3
-  }, this)
-] }, void 0, !0, {
-  fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/components/IconError.jsx",
-  lineNumber: 1,
-  columnNumber: 30
-}, this);
-
-// node_modules/@shopify/cli-hydrogen/dist/virtual-routes/assets/inter-variable-font.woff2
-var inter_variable_font_default = "/build/_assets/inter-variable-font-PIM5FCLG.woff2";
-
-// node_modules/@shopify/cli-hydrogen/dist/virtual-routes/assets/jetbrainsmono-variable-font.woff2
-var jetbrainsmono_variable_font_default = "/build/_assets/jetbrainsmono-variable-font-QJMIHK5L.woff2";
-
-// node_modules/@shopify/cli-hydrogen/dist/virtual-routes/routes/index.jsx
-var import_jsx_dev_runtime12 = __toESM(require_jsx_dev_runtime(), 1), links3 = () => [
-  {
-    rel: "icon",
-    type: "image/svg+xml",
-    href: favicon_default2
-  },
-  {
-    rel: "preload",
-    href: inter_variable_font_default,
-    as: "font",
-    type: "font/ttf",
-    crossOrigin: "anonymous"
-  },
-  {
-    rel: "preload",
-    href: jetbrainsmono_variable_font_default,
-    as: "font",
-    type: "font/ttf",
-    crossOrigin: "anonymous"
-  }
-];
-async function loader3({ context }) {
-  return { layout: await context.storefront.query(LAYOUT_QUERY2) };
-}
-var HYDROGEN_SHOP_ID = "gid://shopify/Shop/55145660472";
-function ErrorBoundary() {
-  return /* @__PURE__ */ (0, import_jsx_dev_runtime12.jsxDEV)(ErrorPage, {}, void 0, !1, {
-    fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/routes/index.jsx",
-    lineNumber: 39,
-    columnNumber: 10
-  }, this);
-}
-function Index() {
-  let data = useLoaderData2(), { name: shopName, id: shopId } = data.layout.shop, configDone = shopId !== HYDROGEN_SHOP_ID;
-  return /* @__PURE__ */ (0, import_jsx_dev_runtime12.jsxDEV)(import_jsx_dev_runtime12.Fragment, { children: /* @__PURE__ */ (0, import_jsx_dev_runtime12.jsxDEV)(Layout2, { shopName, children: [
-    configDone ? /* @__PURE__ */ (0, import_jsx_dev_runtime12.jsxDEV)(HydrogenLogoBaseColor, {}, void 0, !1, {
-      fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/routes/index.jsx",
-      lineNumber: 46,
-      columnNumber: 19
-    }, this) : /* @__PURE__ */ (0, import_jsx_dev_runtime12.jsxDEV)(HydrogenLogoBaseBW, {}, void 0, !1, {
-      fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/routes/index.jsx",
-      lineNumber: 46,
-      columnNumber: 47
-    }, this),
-    /* @__PURE__ */ (0, import_jsx_dev_runtime12.jsxDEV)("h1", { children: [
-      "Hello, ",
-      shopName || "Hydrogen"
-    ] }, void 0, !0, {
-      fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/routes/index.jsx",
-      lineNumber: 47,
-      columnNumber: 5
-    }, this),
-    /* @__PURE__ */ (0, import_jsx_dev_runtime12.jsxDEV)("p", { children: "Welcome to your new custom storefront" }, void 0, !1, {
-      fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/routes/index.jsx",
-      lineNumber: 51,
-      columnNumber: 5
-    }, this),
-    configDone ? null : /* @__PURE__ */ (0, import_jsx_dev_runtime12.jsxDEV)("section", { className: "Banner", children: [
-      /* @__PURE__ */ (0, import_jsx_dev_runtime12.jsxDEV)("div", { children: [
-        /* @__PURE__ */ (0, import_jsx_dev_runtime12.jsxDEV)(IconBanner, {}, void 0, !1, {
-          fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/routes/index.jsx",
-          lineNumber: 54,
-          columnNumber: 9
-        }, this),
-        /* @__PURE__ */ (0, import_jsx_dev_runtime12.jsxDEV)("h2", { children: "Configure storefront token" }, void 0, !1, {
-          fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/routes/index.jsx",
-          lineNumber: 55,
-          columnNumber: 9
-        }, this)
-      ] }, void 0, !0, {
-        fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/routes/index.jsx",
-        lineNumber: 53,
-        columnNumber: 7
-      }, this),
-      /* @__PURE__ */ (0, import_jsx_dev_runtime12.jsxDEV)("p", { children: [
-        "You\u2019re seeing this because you have not yet configured your storefront token. ",
-        /* @__PURE__ */ (0, import_jsx_dev_runtime12.jsxDEV)("br", {}, void 0, !1, {
-          fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/routes/index.jsx",
-          lineNumber: 59,
-          columnNumber: 9
-        }, this),
-        /* @__PURE__ */ (0, import_jsx_dev_runtime12.jsxDEV)("br", {}, void 0, !1, {
-          fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/routes/index.jsx",
-          lineNumber: 60,
-          columnNumber: 9
-        }, this),
-        " To get started, edit ",
-        " ",
-        /* @__PURE__ */ (0, import_jsx_dev_runtime12.jsxDEV)("code", { children: ".env" }, void 0, !1, {
-          fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/routes/index.jsx",
-          lineNumber: 63,
-          columnNumber: 9
-        }, this),
-        ". Then, create your first route with the file",
-        " ",
-        /* @__PURE__ */ (0, import_jsx_dev_runtime12.jsxDEV)("code", { children: "/app/routes/_index.jsx" }, void 0, !1, {
-          fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/routes/index.jsx",
-          lineNumber: 66,
-          columnNumber: 9
-        }, this),
-        ". Learn more about",
-        " ",
-        /* @__PURE__ */ (0, import_jsx_dev_runtime12.jsxDEV)("a", { target: "_blank", rel: "norefferer noopener", href: "https://shopify.dev/docs/custom-storefronts/hydrogen/environment-variables", children: "editing environment variables" }, void 0, !1, {
-          fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/routes/index.jsx",
-          lineNumber: 69,
-          columnNumber: 9
-        }, this),
-        " ",
-        "and",
-        " ",
-        /* @__PURE__ */ (0, import_jsx_dev_runtime12.jsxDEV)("a", { target: "_blank", rel: "norefferer noopener", href: "https://shopify.dev/docs/custom-storefronts/hydrogen/building/begin-development#step-4-create-a-route", children: "creating routes" }, void 0, !1, {
-          fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/routes/index.jsx",
-          lineNumber: 73,
-          columnNumber: 9
-        }, this),
-        "."
-      ] }, void 0, !0, {
-        fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/routes/index.jsx",
-        lineNumber: 57,
-        columnNumber: 7
-      }, this)
-    ] }, void 0, !0, {
-      fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/routes/index.jsx",
-      lineNumber: 52,
-      columnNumber: 26
-    }, this),
-    /* @__PURE__ */ (0, import_jsx_dev_runtime12.jsxDEV)(ResourcesLinks, {}, void 0, !1, {
-      fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/routes/index.jsx",
-      lineNumber: 77,
-      columnNumber: 5
-    }, this)
-  ] }, void 0, !0, {
-    fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/routes/index.jsx",
-    lineNumber: 45,
-    columnNumber: 12
-  }, this) }, void 0, !1, {
-    fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/routes/index.jsx",
-    lineNumber: 45,
-    columnNumber: 10
-  }, this);
-}
-function ErrorPage() {
-  return /* @__PURE__ */ (0, import_jsx_dev_runtime12.jsxDEV)(import_jsx_dev_runtime12.Fragment, { children: /* @__PURE__ */ (0, import_jsx_dev_runtime12.jsxDEV)(Layout2, { shopName: "Hydrogen", children: [
-    /* @__PURE__ */ (0, import_jsx_dev_runtime12.jsxDEV)(HydrogenLogoBaseBW, {}, void 0, !1, {
-      fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/routes/index.jsx",
-      lineNumber: 82,
-      columnNumber: 5
-    }, this),
-    /* @__PURE__ */ (0, import_jsx_dev_runtime12.jsxDEV)("h1", { children: "Hello, Hydrogen" }, void 0, !1, {
-      fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/routes/index.jsx",
-      lineNumber: 83,
-      columnNumber: 5
-    }, this),
-    /* @__PURE__ */ (0, import_jsx_dev_runtime12.jsxDEV)("p", { children: "Welcome to your new custom storefront" }, void 0, !1, {
-      fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/routes/index.jsx",
-      lineNumber: 84,
-      columnNumber: 5
-    }, this),
-    /* @__PURE__ */ (0, import_jsx_dev_runtime12.jsxDEV)("section", { className: "Banner ErrorBanner", children: [
-      /* @__PURE__ */ (0, import_jsx_dev_runtime12.jsxDEV)("div", { children: [
-        /* @__PURE__ */ (0, import_jsx_dev_runtime12.jsxDEV)(IconError, {}, void 0, !1, {
-          fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/routes/index.jsx",
-          lineNumber: 87,
-          columnNumber: 9
-        }, this),
-        /* @__PURE__ */ (0, import_jsx_dev_runtime12.jsxDEV)("h2", { children: "There\u2019s a problem with your storefront" }, void 0, !1, {
-          fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/routes/index.jsx",
-          lineNumber: 88,
-          columnNumber: 9
-        }, this)
-      ] }, void 0, !0, {
-        fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/routes/index.jsx",
-        lineNumber: 86,
-        columnNumber: 7
-      }, this),
-      /* @__PURE__ */ (0, import_jsx_dev_runtime12.jsxDEV)("p", { children: [
-        "Check your domain and API token in your ",
-        /* @__PURE__ */ (0, import_jsx_dev_runtime12.jsxDEV)("code", { children: ".env" }, void 0, !1, {
-          fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/routes/index.jsx",
-          lineNumber: 92,
-          columnNumber: 9
-        }, this),
-        " file. Learn more about",
-        " ",
-        /* @__PURE__ */ (0, import_jsx_dev_runtime12.jsxDEV)("a", { target: "_blank", rel: "norefferer noopener", href: "https://shopify.dev/docs/custom-storefronts/hydrogen/environment-variables", children: "editing environment variables" }, void 0, !1, {
-          fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/routes/index.jsx",
-          lineNumber: 95,
-          columnNumber: 9
-        }, this),
-        "."
-      ] }, void 0, !0, {
-        fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/routes/index.jsx",
-        lineNumber: 90,
-        columnNumber: 7
-      }, this)
-    ] }, void 0, !0, {
-      fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/routes/index.jsx",
-      lineNumber: 85,
-      columnNumber: 5
-    }, this),
-    /* @__PURE__ */ (0, import_jsx_dev_runtime12.jsxDEV)(ResourcesLinks, {}, void 0, !1, {
-      fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/routes/index.jsx",
-      lineNumber: 99,
-      columnNumber: 5
-    }, this)
-  ] }, void 0, !0, {
-    fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/routes/index.jsx",
-    lineNumber: 81,
-    columnNumber: 12
-  }, this) }, void 0, !1, {
-    fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/routes/index.jsx",
-    lineNumber: 81,
-    columnNumber: 10
-  }, this);
-}
-function ResourcesLinks() {
-  return /* @__PURE__ */ (0, import_jsx_dev_runtime12.jsxDEV)(import_jsx_dev_runtime12.Fragment, { children: /* @__PURE__ */ (0, import_jsx_dev_runtime12.jsxDEV)("section", { className: "Links", children: [
-    /* @__PURE__ */ (0, import_jsx_dev_runtime12.jsxDEV)("h2", { children: "Start building" }, void 0, !1, {
-      fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/routes/index.jsx",
-      lineNumber: 104,
-      columnNumber: 5
-    }, this),
-    /* @__PURE__ */ (0, import_jsx_dev_runtime12.jsxDEV)("ul", { children: [
-      /* @__PURE__ */ (0, import_jsx_dev_runtime12.jsxDEV)("li", { children: /* @__PURE__ */ (0, import_jsx_dev_runtime12.jsxDEV)("a", { target: "_blank", rel: "norefferer noopener", href: "https://shopify.dev/custom-storefronts/hydrogen/building/collection-page", children: "Collection template" }, void 0, !1, {
-        fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/routes/index.jsx",
-        lineNumber: 106,
-        columnNumber: 11
-      }, this) }, void 0, !1, {
-        fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/routes/index.jsx",
-        lineNumber: 106,
-        columnNumber: 7
-      }, this),
-      /* @__PURE__ */ (0, import_jsx_dev_runtime12.jsxDEV)("li", { children: /* @__PURE__ */ (0, import_jsx_dev_runtime12.jsxDEV)("a", { target: "_blank", rel: "norefferer noopener", href: "https://shopify.dev/custom-storefronts/hydrogen/building/product-details-page", children: "Product template" }, void 0, !1, {
-        fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/routes/index.jsx",
-        lineNumber: 107,
-        columnNumber: 11
-      }, this) }, void 0, !1, {
-        fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/routes/index.jsx",
-        lineNumber: 107,
-        columnNumber: 7
-      }, this),
-      /* @__PURE__ */ (0, import_jsx_dev_runtime12.jsxDEV)("li", { children: /* @__PURE__ */ (0, import_jsx_dev_runtime12.jsxDEV)("a", { target: "_blank", rel: "norefferer noopener", href: "https://shopify.dev/custom-storefronts/hydrogen/building/cart", children: "Cart" }, void 0, !1, {
-        fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/routes/index.jsx",
-        lineNumber: 108,
-        columnNumber: 11
-      }, this) }, void 0, !1, {
-        fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/routes/index.jsx",
-        lineNumber: 108,
-        columnNumber: 7
-      }, this)
-    ] }, void 0, !0, {
-      fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/routes/index.jsx",
-      lineNumber: 105,
-      columnNumber: 5
-    }, this),
-    /* @__PURE__ */ (0, import_jsx_dev_runtime12.jsxDEV)("h2", { children: "Resources" }, void 0, !1, {
-      fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/routes/index.jsx",
-      lineNumber: 110,
-      columnNumber: 5
-    }, this),
-    /* @__PURE__ */ (0, import_jsx_dev_runtime12.jsxDEV)("ul", { children: [
-      /* @__PURE__ */ (0, import_jsx_dev_runtime12.jsxDEV)("li", { children: /* @__PURE__ */ (0, import_jsx_dev_runtime12.jsxDEV)("a", { target: "_blank", rel: "norefferer noopener", href: "https://shopify.dev/custom-storefronts/hydrogen", children: "Hydrogen docs" }, void 0, !1, {
-        fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/routes/index.jsx",
-        lineNumber: 112,
-        columnNumber: 11
-      }, this) }, void 0, !1, {
-        fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/routes/index.jsx",
-        lineNumber: 112,
-        columnNumber: 7
-      }, this),
-      /* @__PURE__ */ (0, import_jsx_dev_runtime12.jsxDEV)("li", { children: /* @__PURE__ */ (0, import_jsx_dev_runtime12.jsxDEV)("a", { target: "_blank", rel: "norefferer noopener", href: "https://shopify.dev/custom-storefronts/hydrogen/project-structure", children: "Remix and project structure" }, void 0, !1, {
-        fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/routes/index.jsx",
-        lineNumber: 113,
-        columnNumber: 11
-      }, this) }, void 0, !1, {
-        fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/routes/index.jsx",
-        lineNumber: 113,
-        columnNumber: 7
-      }, this),
-      /* @__PURE__ */ (0, import_jsx_dev_runtime12.jsxDEV)("li", { children: /* @__PURE__ */ (0, import_jsx_dev_runtime12.jsxDEV)("a", { target: "_blank", rel: "norefferer noopener", href: "https://shopify.dev/custom-storefronts/hydrogen/data-fetching/fetch-data", children: "Data queries and fetching" }, void 0, !1, {
-        fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/routes/index.jsx",
-        lineNumber: 114,
-        columnNumber: 11
-      }, this) }, void 0, !1, {
-        fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/routes/index.jsx",
-        lineNumber: 114,
-        columnNumber: 7
-      }, this)
-    ] }, void 0, !0, {
-      fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/routes/index.jsx",
-      lineNumber: 111,
-      columnNumber: 5
-    }, this)
-  ] }, void 0, !0, {
-    fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/routes/index.jsx",
-    lineNumber: 103,
-    columnNumber: 12
-  }, this) }, void 0, !1, {
-    fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/routes/index.jsx",
-    lineNumber: 103,
-    columnNumber: 10
-  }, this);
-}
-function Layout2({
-  shopName,
-  children
-}) {
-  return /* @__PURE__ */ (0, import_jsx_dev_runtime12.jsxDEV)(import_jsx_dev_runtime12.Fragment, { children: [
-    /* @__PURE__ */ (0, import_jsx_dev_runtime12.jsxDEV)("header", { children: [
-      /* @__PURE__ */ (0, import_jsx_dev_runtime12.jsxDEV)("h1", { children: shopName == null ? void 0 : shopName.toUpperCase() }, void 0, !1, {
-        fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/routes/index.jsx",
-        lineNumber: 124,
-        columnNumber: 7
-      }, this),
-      /* @__PURE__ */ (0, import_jsx_dev_runtime12.jsxDEV)("p", { children: "\xA0Dev Mode\xA0" }, void 0, !1, {
-        fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/routes/index.jsx",
-        lineNumber: 125,
-        columnNumber: 7
-      }, this),
-      /* @__PURE__ */ (0, import_jsx_dev_runtime12.jsxDEV)("nav", { children: [
-        /* @__PURE__ */ (0, import_jsx_dev_runtime12.jsxDEV)("a", { target: "_blank", rel: "norefferer noopener", href: "https://discord.com/invite/shopifydevs", children: /* @__PURE__ */ (0, import_jsx_dev_runtime12.jsxDEV)(IconDiscord, {}, void 0, !1, {
-          fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/routes/index.jsx",
-          lineNumber: 127,
-          columnNumber: 100
-        }, this) }, void 0, !1, {
-          fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/routes/index.jsx",
-          lineNumber: 127,
-          columnNumber: 9
-        }, this),
-        /* @__PURE__ */ (0, import_jsx_dev_runtime12.jsxDEV)("a", { target: "_blank", rel: "norefferer noopener", href: "https://github.com/Shopify/hydrogen", children: /* @__PURE__ */ (0, import_jsx_dev_runtime12.jsxDEV)(IconGithub, {}, void 0, !1, {
-          fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/routes/index.jsx",
-          lineNumber: 128,
-          columnNumber: 97
-        }, this) }, void 0, !1, {
-          fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/routes/index.jsx",
-          lineNumber: 128,
-          columnNumber: 9
-        }, this),
-        /* @__PURE__ */ (0, import_jsx_dev_runtime12.jsxDEV)("a", { target: "_blank", rel: "norefferer noopener", href: "https://twitter.com/shopifydevs?lang=en", children: /* @__PURE__ */ (0, import_jsx_dev_runtime12.jsxDEV)(IconTwitter, {}, void 0, !1, {
-          fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/routes/index.jsx",
-          lineNumber: 129,
-          columnNumber: 101
-        }, this) }, void 0, !1, {
-          fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/routes/index.jsx",
-          lineNumber: 129,
-          columnNumber: 9
-        }, this)
-      ] }, void 0, !0, {
-        fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/routes/index.jsx",
-        lineNumber: 126,
-        columnNumber: 7
-      }, this)
-    ] }, void 0, !0, {
-      fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/routes/index.jsx",
-      lineNumber: 123,
-      columnNumber: 5
-    }, this),
-    /* @__PURE__ */ (0, import_jsx_dev_runtime12.jsxDEV)("main", { children }, void 0, !1, {
-      fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/routes/index.jsx",
-      lineNumber: 132,
-      columnNumber: 5
-    }, this),
-    /* @__PURE__ */ (0, import_jsx_dev_runtime12.jsxDEV)("footer", { children: /* @__PURE__ */ (0, import_jsx_dev_runtime12.jsxDEV)("div", { children: /* @__PURE__ */ (0, import_jsx_dev_runtime12.jsxDEV)("a", { href: "https://shopify.com", target: "_blank", rel: "noreferrer noopener", children: "Powered by Shopify" }, void 0, !1, {
-      fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/routes/index.jsx",
-      lineNumber: 133,
-      columnNumber: 18
-    }, this) }, void 0, !1, {
-      fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/routes/index.jsx",
-      lineNumber: 133,
-      columnNumber: 13
-    }, this) }, void 0, !1, {
-      fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/routes/index.jsx",
-      lineNumber: 133,
-      columnNumber: 5
-    }, this)
-  ] }, void 0, !0, {
-    fileName: "node_modules/@shopify/cli-hydrogen/dist/virtual-routes/routes/index.jsx",
-    lineNumber: 122,
-    columnNumber: 10
-  }, this);
-}
-var LAYOUT_QUERY2 = `#graphql
-  query layout {
-    shop {
-      name
-      id
-    }
-  }
-`;
-
 // server-assets-manifest:@remix-run/dev/assets-manifest
-var assets_manifest_default = { version: "d3dfbf9e", entry: { module: "/build/entry.client-O5AIBFAK.js", imports: ["/build/_shared/chunk-ISEWWF37.js", "/build/_shared/chunk-5KL4PAQL.js"] }, routes: { root: { id: "root", parentId: void 0, path: "", index: void 0, caseSensitive: void 0, module: "/build/root-YF3LRG5G.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "virtual-routes/routes/graphiql": { id: "virtual-routes/routes/graphiql", parentId: "virtual-routes/virtual-root", path: "graphiql", index: void 0, caseSensitive: void 0, module: "/build/virtual-routes/routes/graphiql-GPDYRMZP.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "virtual-routes/routes/index": { id: "virtual-routes/routes/index", parentId: "virtual-routes/virtual-root", path: void 0, index: !0, caseSensitive: void 0, module: "/build/virtual-routes/routes/index-574DNCHP.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !0 }, "virtual-routes/virtual-root": { id: "virtual-routes/virtual-root", parentId: void 0, path: "", index: void 0, caseSensitive: void 0, module: "/build/virtual-routes/virtual-root-H65Z4WMN.js", imports: ["/build/_shared/chunk-Z7RIBLB2.js"], hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 } }, cssBundleHref: void 0, hmr: void 0, url: "/build/manifest-D3DFBF9E.js" };
+var assets_manifest_default = { version: "6bf43a96", entry: { module: "/build/entry.client-M75HJF4A.js", imports: ["/build/_shared/chunk-QP5E6Q62.js", "/build/_shared/chunk-AQO2IFES.js", "/build/_shared/chunk-5KL4PAQL.js"] }, routes: { root: { id: "root", parentId: void 0, path: "", index: void 0, caseSensitive: void 0, module: "/build/root-5Z3UKOFZ.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/_index": { id: "routes/_index", parentId: "root", path: void 0, index: !0, caseSensitive: void 0, module: "/build/routes/_index-YQUMC477.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "virtual-routes/routes/graphiql": { id: "virtual-routes/routes/graphiql", parentId: "virtual-routes/virtual-root", path: "graphiql", index: void 0, caseSensitive: void 0, module: "/build/virtual-routes/routes/graphiql-GPDYRMZP.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "virtual-routes/virtual-root": { id: "virtual-routes/virtual-root", parentId: void 0, path: "", index: void 0, caseSensitive: void 0, module: "/build/virtual-routes/virtual-root-TI4ODO44.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 } }, cssBundleHref: void 0, hmr: void 0, url: "/build/manifest-6BF43A96.js" };
 
 // server-entry-module:@remix-run/dev/server-build
-var assetsBuildDirectory = "dist/client/build", future = { unstable_cssModules: !1, unstable_cssSideEffectImports: !1, unstable_dev: !1, unstable_postcss: !1, unstable_tailwind: !1, unstable_vanillaExtract: !1, v2_errorBoundary: !0, v2_meta: !0, v2_normalizeFormMethod: !0, v2_routeConvention: !0 }, publicPath = "/build/", entry = { module: entry_server_exports }, routes = {
+var assetsBuildDirectory = "dist/client/build", future = { unstable_cssModules: !1, unstable_cssSideEffectImports: !1, unstable_dev: !1, unstable_postcss: !1, unstable_tailwind: !0, unstable_vanillaExtract: !1, v2_errorBoundary: !0, v2_meta: !0, v2_normalizeFormMethod: !0, v2_routeConvention: !0 }, publicPath = "/build/", entry = { module: entry_server_exports }, routes = {
   root: {
     id: "root",
     parentId: void 0,
@@ -16197,6 +15391,14 @@ var assetsBuildDirectory = "dist/client/build", future = { unstable_cssModules: 
     index: void 0,
     caseSensitive: void 0,
     module: root_exports
+  },
+  "routes/_index": {
+    id: "routes/_index",
+    parentId: "root",
+    path: void 0,
+    index: !0,
+    caseSensitive: void 0,
+    module: index_exports
   },
   "virtual-routes/routes/graphiql": {
     id: "virtual-routes/routes/graphiql",
@@ -16213,14 +15415,6 @@ var assetsBuildDirectory = "dist/client/build", future = { unstable_cssModules: 
     index: void 0,
     caseSensitive: void 0,
     module: virtual_root_exports
-  },
-  "virtual-routes/routes/index": {
-    id: "virtual-routes/routes/index",
-    parentId: "virtual-routes/virtual-root",
-    path: void 0,
-    index: !0,
-    caseSensitive: void 0,
-    module: routes_exports
   }
 };
 

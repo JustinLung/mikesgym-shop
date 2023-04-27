@@ -8,7 +8,7 @@ import {
   useLoaderData,
 } from '@remix-run/react';
 import type {Shop} from '@shopify/hydrogen/storefront-api-types';
-import styles from './styles/app.css';
+import styles from './styles/tailwind.css';
 import favicon from '../public/favicon.svg';
 
 export const links: LinksFunction = () => {
@@ -44,9 +44,7 @@ export default function App() {
         <Meta />
         <Links />
       </head>
-      <body>
-        <h1>Hello, {name}</h1>
-        <p>This is a custom storefront powered by Hydrogen</p>
+      <body className="bg-black text-white">
         <Outlet />
         <ScrollRestoration />
         <Scripts />
