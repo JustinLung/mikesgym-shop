@@ -109,7 +109,7 @@ function CartDiscounts({
           )}
         >
           <input
-            className={getInputStyleClasses()}
+            className="text-black bg-white"
             type="text"
             name="discountCode"
             placeholder="Discount code"

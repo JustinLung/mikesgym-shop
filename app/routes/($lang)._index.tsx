@@ -11,7 +11,6 @@ import type {
 } from '@shopify/hydrogen/storefront-api-types';
 import {AnalyticsPageType} from '@shopify/hydrogen';
 import {routeHeaders, CACHE_SHORT} from '~/data/cache';
-import {type CollectionHero} from '~/components/Hero';
 
 interface HomeSeoData {
   shop: {
@@ -34,8 +33,7 @@ export async function loader({params, context}: LoaderArgs) {
     throw new Response(null, {status: 404});
   }
 
-  const {shop, hero} = await context.storefront.query<{
-    hero: CollectionHero;
+  const {shop} = await context.storefront.query<{
     shop: HomeSeoData;
   }>(HOMEPAGE_SEO_QUERY, {
     variables: {handle: 'freestyle'},
@@ -46,32 +44,14 @@ export async function loader({params, context}: LoaderArgs) {
   return defer(
     {
       shop,
-      primaryHero: hero,
-      // These different queries are separated to illustrate how 3rd party content
-      // fetching can be optimized for both above and below the fold.
       featuredProducts: context.storefront.query<{
         products: ProductConnection;
       }>(HOMEPAGE_FEATURED_PRODUCTS_QUERY, {
         variables: {
-          /**
-           * Country and language properties are automatically injected
-           * into all queries. Passing them is unnecessary unless you
-           * want to override them from the following default:
-           */
           country,
           language,
         },
       }),
-      secondaryHero: context.storefront.query<{hero: CollectionHero}>(
-        COLLECTION_HERO_QUERY,
-        {
-          variables: {
-            handle: 'backcountry',
-            country,
-            language,
-          },
-        },
-      ),
       featuredCollections: context.storefront.query<{
         collections: CollectionConnection;
       }>(FEATURED_COLLECTIONS_QUERY, {
@@ -80,16 +60,6 @@ export async function loader({params, context}: LoaderArgs) {
           language,
         },
       }),
-      tertiaryHero: context.storefront.query<{hero: CollectionHero}>(
-        COLLECTION_HERO_QUERY,
-        {
-          variables: {
-            handle: 'winter-2022',
-            country,
-            language,
-          },
-        },
-      ),
       analytics: {
         pageType: AnalyticsPageType.home,
       },
@@ -104,23 +74,11 @@ export async function loader({params, context}: LoaderArgs) {
 }
 
 export default function Homepage() {
-  const {
-    primaryHero,
-    secondaryHero,
-    tertiaryHero,
-    featuredCollections,
-    featuredProducts,
-  } = useLoaderData<typeof loader>();
-
-  // TODO: skeletons vs placeholders
-  const skeletons = getHeroPlaceholder([{}, {}, {}]);
+  const {featuredProducts} = useLoaderData<typeof loader>();
 
   return (
     <>
-      {primaryHero && (
-        <Hero {...primaryHero} height="full" top loading="eager" />
-      )}
-
+      <Hero />
       {featuredProducts && (
         <Suspense>
           <Await resolve={featuredProducts}>
@@ -138,18 +96,7 @@ export default function Homepage() {
         </Suspense>
       )}
 
-      {secondaryHero && (
-        <Suspense fallback={<Hero {...skeletons[1]} />}>
-          <Await resolve={secondaryHero}>
-            {({hero}) => {
-              if (!hero) return <></>;
-              return <Hero {...hero} />;
-            }}
-          </Await>
-        </Suspense>
-      )}
-
-      {featuredCollections && (
+      {/* {featuredCollections && (
         <Suspense>
           <Await resolve={featuredCollections}>
             {({collections}) => {
@@ -163,18 +110,7 @@ export default function Homepage() {
             }}
           </Await>
         </Suspense>
-      )}
-
-      {tertiaryHero && (
-        <Suspense fallback={<Hero {...skeletons[2]} />}>
-          <Await resolve={tertiaryHero}>
-            {({hero}) => {
-              if (!hero) return <></>;
-              return <Hero {...hero} />;
-            }}
-          </Await>
-        </Suspense>
-      )}
+      )} */}
     </>
   );
 }
