@@ -15,12 +15,26 @@ export default {
   content: ['./app/**/*.{js,ts,jsx,tsx}'],
   theme: {
     extend: {
+      animation: {
+        marquee: 'marquee 15s linear infinite',
+        marquee2: 'marquee2 15s linear infinite',
+      },
+      keyframes: {
+        marquee: {
+          '0%': {transform: 'translateX(0%)'},
+          '100%': {transform: 'translateX(-100%)'},
+        },
+        marquee2: {
+          '0%': {transform: 'translateX(100%)'},
+          '100%': {transform: 'translateX(0%)'},
+        },
+      },
       colors: {
         primary: withOpacityValue('--color-primary'),
         contrast: withOpacityValue('--color-contrast'),
         notice: withOpacityValue('--color-accent'),
         shopPay: 'var(--color-shop-pay)',
-        "mg-yellow": "#FFEE00",
+        'mg-yellow': '#FFEE00',
       },
       screens: {
         sm: '32em',

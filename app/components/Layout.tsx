@@ -187,7 +187,7 @@ function DesktopHeader({
           to="https://mikesgym.com/memberships/"
           target="_blank"
           rel="noreferrer noopener"
-          className="bg-mg-yellow text-black py-2 px-4"
+          className="bg-mg-yellow text-black py-2 px-4 border-2 border-mg-yellow hover:bg-transparent transition-colors hover:text-mg-yellow"
         >
           BECOME A MEMBER
         </Link>

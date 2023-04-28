@@ -11,6 +11,7 @@ import type {
 } from '@shopify/hydrogen/storefront-api-types';
 import {AnalyticsPageType} from '@shopify/hydrogen';
 import {routeHeaders, CACHE_SHORT} from '~/data/cache';
+import Marque from '~/components/Marque';
 
 interface HomeSeoData {
   shop: {
@@ -79,6 +80,7 @@ export default function Homepage() {
   return (
     <>
       <Hero />
+      <Marque />
       {featuredProducts && (
         <Suspense>
           <Await resolve={featuredProducts}>

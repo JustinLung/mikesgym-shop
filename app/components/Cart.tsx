@@ -176,7 +176,11 @@ function CartCheckoutActions({checkoutUrl}: {checkoutUrl: string}) {
   return (
     <div className="flex flex-col mt-2">
       <a href={checkoutUrl} target="_self">
-        <Button as="span" width="full">
+        <Button
+          as="span"
+          width="full"
+          className="border-2 bg-mg-yellow text-black border-mg-yellow hover:bg-transparent transition-colors hover:text-mg-yellow px-4 py-2"
+        >
           Continue to Checkout
         </Button>
       </a>
@@ -315,11 +319,11 @@ function CartLineQuantityAdjust({line}: {line: CartLine}) {
           <button
             name="decrease-quantity"
             aria-label="Decrease quantity"
-            className="w-10 h-10 transition text-primary/50 hover:text-primary disabled:text-primary/10"
+            className="w-10 h-10 transition text-primary/50 hover:text-primary disabled:text-primary/10 text-white"
             value={prevQuantity}
             disabled={quantity <= 1}
           >
-            <span>&#8722;</span>
+            <span className="text-white">&#8722;</span>
           </button>
         </UpdateCartButton>
 
@@ -334,7 +338,7 @@ function CartLineQuantityAdjust({line}: {line: CartLine}) {
             value={nextQuantity}
             aria-label="Increase quantity"
           >
-            <span>&#43;</span>
+            <span className="text-white">&#43;</span>
           </button>
         </UpdateCartButton>
       </div>
@@ -414,7 +418,12 @@ export function CartEmpty({
           started!
         </Text>
         <div>
-          <Button onClick={onClose}>Continue shopping</Button>
+          <Button
+            onClick={onClose}
+            className="border-2 bg-mg-yellow text-black border-mg-yellow hover:bg-transparent transition-colors hover:text-mg-yellow px-4 py-2"
+          >
+            Continue shopping
+          </Button>
         </div>
       </section>
       <section className="grid gap-8 pt-16">
