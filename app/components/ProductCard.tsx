@@ -78,8 +78,9 @@ export function ProductCard({
             <Text
               as="label"
               size="fine"
-              className="absolute top-0 right-0 m-4 text-right text-notice"
+              className="absolute flex justify-center items-center gap-2 top-0 right-0 m-4 text-right text-black bg-mg-yellow uppercase text-md px-5 py-1"
             >
+              <img src="/icons/sparkle.svg" alt="Sparkle Icon"/>
               {cardLabel}
             </Text>
           </div>
@@ -91,7 +92,7 @@ export function ProductCard({
               {product.title}
             </Text>
             <div className="flex gap-4">
-              <Text className="flex gap-4">
+              <Text className="flex gap-4 font-[100]">
                 <Money withoutTrailingZeros data={price!} />
                 {isDiscounted(price as MoneyV2, compareAtPrice as MoneyV2) && (
                   <CompareAtPrice
@@ -113,7 +114,7 @@ export function ProductCard({
             },
           ]}
           variant="secondary"
-          className="mt-2"
+          className="mt-2 bg-mg-yellow text-black py-2"
           analytics={{
             products: [productAnalytics],
             totalValue: parseFloat(productAnalytics.price),

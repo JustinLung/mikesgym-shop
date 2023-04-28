@@ -12,7 +12,7 @@ export function NotFound({type = 'page'}: {type?: string}) {
         <Text width="narrow" as="p">
           {description}
         </Text>
-        <Button width="auto" variant="secondary" to={'/'}>
+        <Button width="auto" variant="secondary" to={'/'} className="bg-mg-yellow px-4 py-2 text-black">
           Take me to the home page
         </Button>
       </PageHeader>

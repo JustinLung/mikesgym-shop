@@ -29,8 +29,17 @@ export function Layout({
       <main role="main" id="mainContent" className="flex-grow">
         {children}
       </main>
+      <Footer/>
     </>
   );
+}
+
+function Footer() {
+  return(
+    <footer>
+      footer
+    </footer>
+  )
 }
 
 function Header({menu}: {menu?: EnhancedMenu}) {
