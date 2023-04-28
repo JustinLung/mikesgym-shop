@@ -1,6 +1,6 @@
 import {defer, type LoaderArgs} from '@shopify/remix-oxygen';
 import {Suspense} from 'react';
-import {Await, useLoaderData} from '@remix-run/react';
+import {Await, Link, useLoaderData} from '@remix-run/react';
 import {ProductSwimlane, FeaturedCollections, Hero} from '~/components';
 import {MEDIA_FRAGMENT, PRODUCT_CARD_FRAGMENT} from '~/data/fragments';
 import {getHeroPlaceholder} from '~/lib/placeholders';
@@ -97,22 +97,52 @@ export default function Homepage() {
           </Await>
         </Suspense>
       )}
+      <section className="relative h-[30rem] md:h-[35rem]">
+        <div className="absolute h-full w-full flex flex-col justify-center pl-4 md:pl-12  z-10">
+          <h1 className="text-2xl md:text-5xl">
+            YOU’VE PUT IN THE WORK. <br /> NOW SHOW OFF THE RESULTS.
+          </h1>
+          <p className="text-lg md:text-xl font-light pt-2 max-w-md">
+            Flex what you’ve built with physique-enhancing cuts,compressive fits
+            and comfortable lifting essentials.
+          </p>
+          <div className="mt-2 flex gap-3">
+            <Link
+              to="/products"
+              className="bg-mg-yellow text-black w-fit px-4 py-1 border-2 border-mg-yellow hover:bg-transparent transition-colors hover:text-mg-yellow"
+            >
+              SHOP MEN
+            </Link>
+            <Link
+              to="/about"
+              className="bg-transparent text-white border-2 border-solid border-white w-fit px-4 py-1 hover:bg-white hover:text-black transition-colors"
+            >
+              SHOP WOMEN
+            </Link>
+          </div>
+        </div>
+        <div className="h-full w-full bg-black opacity-50 absolute" />
+        <img
+          src="/images/shop.png"
+          alt="shop"
+          className="w-full h-full object-cover"
+        />
+      </section>
 
-      {/* {featuredCollections && (
-        <Suspense>
-          <Await resolve={featuredCollections}>
-            {({collections}) => {
-              if (!collections?.nodes) return <></>;
-              return (
-                <FeaturedCollections
-                  collections={collections.nodes}
-                  title="Collections"
-                />
-              );
-            }}
-          </Await>
-        </Suspense>
-      )} */}
+      <Suspense>
+        <Await resolve={featuredProducts}>
+          {({products}) => {
+            if (!products?.nodes) return <></>;
+            return (
+              <ProductSwimlane
+                products={products.nodes}
+                title="Featured Products"
+                count={4}
+              />
+            );
+          }}
+        </Await>
+      </Suspense>
     </>
   );
 }

@@ -23,23 +23,31 @@ export function Layout({
 }) {
   return (
     <>
-      <Header
-        menu={layout?.headerMenu}
-      />
+      <Header menu={layout?.headerMenu} />
       <main role="main" id="mainContent" className="flex-grow">
         {children}
       </main>
-      <Footer/>
+      <Footer />
     </>
   );
 }
 
 function Footer() {
-  return(
-    <footer>
-      footer
+  return (
+    <footer className="flex justify-between px-4 md:px-8 py-4 md:py-8 border-t-mg-yellow border-transparent border-2">
+      <div>
+        &copy; {new Date().getFullYear()}{' '}
+        <a href="https://mikesgym.com/" target="_blank" rel="noreferrer">
+          Mike's Gym
+        </a>
+      </div>
+      <div className="flex gap-4">
+        <img src="/icons/ideal.png" alt="Ideal" />
+        <img src="/icons/visa.png" alt="Visa" />
+        <img src="/icons/mastercard.png" alt="MasterCard" />
+      </div>
     </footer>
-  )
+  );
 }
 
 function Header({menu}: {menu?: EnhancedMenu}) {
