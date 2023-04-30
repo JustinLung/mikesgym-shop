@@ -146,7 +146,7 @@ export default function Homepage() {
                     title={collections.nodes[0].title}
                     count={4}
                     type="clothing"
-                    href={`/collections/women`}
+                    href={`/collections/men`}
                     prefetch="intent"
                   />
                 </>

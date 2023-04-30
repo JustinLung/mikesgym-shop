@@ -139,7 +139,7 @@ function Account({
     <>
       <PageHeader heading={heading}>
         <Form method="post" action={usePrefixPathWithLocale('/account/logout')}>
-          <button type="submit" className="text-primary/50">
+          <button type="submit" className="text-black bg-mg-yellow px-4 py-2">
             Sign out
           </button>
         </Form>

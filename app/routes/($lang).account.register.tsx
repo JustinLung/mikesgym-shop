@@ -114,6 +114,7 @@ export default function Register() {
             </div>
           )}
           <div>
+          <label htmlFor="password">E-mail address</label>
             <input
               className={`mb-1 ${getInputStyleClasses(nativeEmailError)}`}
               id="email"
@@ -139,6 +140,7 @@ export default function Register() {
             )}
           </div>
           <div>
+            <label htmlFor="password">Password</label>
             <input
               className={`mb-1 ${getInputStyleClasses(nativePasswordError)}`}
               id="password"
@@ -175,7 +177,7 @@ export default function Register() {
           </div>
           <div className="flex items-center justify-between">
             <button
-              className="bg-primary text-contrast rounded py-2 px-4 focus:shadow-outline block w-full"
+              className="bg-mg-yellow text-black py-2 px-4 focus:shadow-outline block w-full"
               type="submit"
               disabled={!!(nativePasswordError || nativeEmailError)}
             >

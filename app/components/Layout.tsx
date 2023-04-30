@@ -7,6 +7,8 @@ import {
   Cart,
   CartLoading,
   Link,
+  IconAccount,
+  IconLogin,
 } from '~/components';
 import {useParams, Await, useMatches} from '@remix-run/react';
 import {Suspense, useEffect, useMemo} from 'react';
@@ -146,6 +148,20 @@ function MenuMobileNav({onClose}: {onClose: () => void}) {
   );
 }
 
+function AccountLink({className}: {className?: string}) {
+  const [root] = useMatches();
+  const isLoggedIn = root.data?.isLoggedIn;
+  return isLoggedIn ? (
+    <Link to="/account" className={className}>
+      <IconAccount />
+    </Link>
+  ) : (
+    <Link to="/account/login" className={className}>
+      <IconLogin />
+    </Link>
+  );
+}
+
 function MobileHeader({
   isHome,
   openCart,
@@ -176,6 +192,7 @@ function MobileHeader({
         />
       </Link>
       <div className="flex items-center justify-end w-full gap-4">
+        <AccountLink className="relative flex items-center justify-center w-8 h-8" />
         <CartCount isHome={isHome} openCart={openCart} />
       </div>
     </header>
@@ -217,6 +234,7 @@ function DesktopHeader({
           BECOME A MEMBER
         </Link>
         <CartCount isHome={isHome} openCart={openCart} />
+        <AccountLink className="relative flex items-center justify-center w-8 h-8" />
       </div>
     </header>
   );

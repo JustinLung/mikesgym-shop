@@ -28,7 +28,7 @@ export async function loader({context, params}: LoaderArgs) {
   }
 
   // TODO: Query for this?
-  return json({shopName: 'Hydrogen'});
+  return json({shopName: 'Mikes Gym'});
 }
 
 type ActionData = {
@@ -96,10 +96,9 @@ export default function Login() {
   );
 
   return (
-    <div className="flex justify-center my-24 px-4">
+    <section className="flex justify-center my-24 px-4">
       <div className="max-w-md w-full">
         <h1 className="text-4xl">Sign in.</h1>
-        {/* TODO: Add onSubmit to validate _before_ submission with native? */}
         <Form
           method="post"
           noValidate
@@ -111,6 +110,9 @@ export default function Login() {
             </div>
           )}
           <div>
+            <label htmlFor="email" className="pb-1">
+              E-mail address
+            </label>
             <input
               className={`mb-1 ${getInputStyleClasses(nativeEmailError)}`}
               id="email"
@@ -137,6 +139,9 @@ export default function Login() {
           </div>
 
           <div>
+            <label htmlFor="email" className="pb-1">
+              Password
+            </label>
             <input
               className={`mb-1 ${getInputStyleClasses(nativePasswordError)}`}
               id="password"
@@ -173,7 +178,7 @@ export default function Login() {
           </div>
           <div className="flex items-center justify-between">
             <button
-              className="bg-primary text-contrast rounded py-2 px-4 focus:shadow-outline block w-full"
+              className="bg-mg-yellow text-black py-2 px-4 focus:shadow-outline block w-full"
               type="submit"
               disabled={!!(nativePasswordError || nativeEmailError)}
             >
@@ -196,7 +201,7 @@ export default function Login() {
           </div>
         </Form>
       </div>
-    </div>
+    </section>
   );
 }
 
