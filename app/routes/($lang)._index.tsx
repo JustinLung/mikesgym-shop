@@ -88,11 +88,11 @@ export default function Homepage() {
               return (
                 <>
                   <ProductSwimlane
-                    products={collections.nodes[1].products.nodes}
-                    title={collections.nodes[1].title}
+                    products={collections.nodes[2].products.nodes}
+                    title={collections.nodes[2].title}
                     count={4}
-                    type="clothing"
-                    href={`/collections/men`}
+                    type="Accessories"
+                    href={`/collections/gloves`}
                   />
                 </>
               );

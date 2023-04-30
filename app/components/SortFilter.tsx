@@ -393,7 +393,7 @@ export default function SortMenu() {
 
       <Menu.Items
         as="nav"
-        className="absolute right-0 flex flex-col p-4 text-right rounded-sm bg-contrast"
+        className="absolute right-0 flex flex-col p-4 text-right rounded-sm bg-black w-full"
       >
         {items.map((item) => (
           <Menu.Item key={item.label}>

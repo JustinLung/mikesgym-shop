@@ -14,7 +14,7 @@ export const loader = ({request}: LoaderArgs) => {
 };
 
 function robotsTxtData({url}: {url: string}) {
-  const sitemapUrl = url ? `${url}/sitemap.xml` : undefined;
+  const sitemapUrl = url ? `/${url}/sitemap.xml` : undefined;
 
   return `
 User-agent: *
