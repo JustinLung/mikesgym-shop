@@ -1,4 +1,4 @@
-import {type SeoConfig} from '@shopify/hydrogen';
+import { type SeoConfig } from '@shopify/hydrogen';
 import type {
   Article,
   Blog,
@@ -30,7 +30,7 @@ function root({
 }): SeoConfig<Organization> {
   return {
     title: shop?.name,
-    titleTemplate: '%s | Hydrogen Demo Store',
+    titleTemplate: 'Mikes Gym | %s',
     description: truncate(shop?.description ?? ''),
     handle: '@shopify',
     url,
@@ -63,8 +63,8 @@ function root({
 function home(): SeoConfig<WebPage> {
   return {
     title: 'Home',
-    titleTemplate: '%s | Hydrogen Demo Store',
-    description: 'The best place to buy snowboarding products',
+    titleTemplate: 'Mikes Gym | %s',
+    description: 'Mike’s gym is known worldwide authority when it comes to combat sports and especially in kickboxing Mike’s gym is one of the best gyms in the world which was founded by Michael Passenier better known as “Big” Mike',
     robots: {
       noIndex: false,
       noFollow: false,
@@ -160,7 +160,7 @@ function product({
     title: product?.seo?.title ?? product?.title,
     description,
     media: selectedVariant?.image,
-    jsonLd: productJsonLd({product, selectedVariant, url}),
+    jsonLd: productJsonLd({ product, selectedVariant, url }),
   };
 }
 
@@ -236,7 +236,7 @@ function collection({
       width: collection?.image?.width,
       altText: collection?.image?.altText,
     },
-    jsonLd: collectionJsonLd({collection, url}),
+    jsonLd: collectionJsonLd({ collection, url }),
   };
 }
 
@@ -280,9 +280,9 @@ function listCollections({
   return {
     title: 'Collections',
     titleTemplate: '%s | Collections',
-    description: 'All hydrogen collections',
+    description: 'All Mikes Gym collections',
     url,
-    jsonLd: collectionsJsonLd({collections, url}),
+    jsonLd: collectionsJsonLd({ collections, url }),
   };
 }
 
@@ -399,7 +399,7 @@ function policies({
   return {
     title: 'Policies',
     titleTemplate: '%s | Policies',
-    description: 'Hydroge store policies',
+    description: 'Mikes Gym store policies',
     jsonLd: [
       {
         '@context': 'https://schema.org',
@@ -409,7 +409,7 @@ function policies({
       {
         '@context': 'https://schema.org',
         '@type': 'WebPage',
-        description: 'Hydrogen store policies',
+        description: 'Mikes Gym store policies',
         name: 'Policies',
         url,
       },
