@@ -57,14 +57,14 @@ export function ProductCard({
   };
 
   return (
-    <div className="flex flex-col gap-2">
+    <article className="flex flex-col gap-2">
       <Link
         onClick={onClick}
         to={`/products/${product.handle}`}
         prefetch="intent"
       >
         <div className={clsx('grid gap-4', className)}>
-          <div className="card-image aspect-[4/5] bg-primary/5">
+          <figure className="card-image aspect-[4/5] bg-primary/5">
             {image && (
               <Image
                 className="object-cover w-full fadeIn"
@@ -80,11 +80,11 @@ export function ProductCard({
               size="fine"
               className="absolute flex justify-center items-center gap-2 top-0 right-0 m-4 text-right text-black bg-mg-yellow uppercase text-md px-5 py-1"
             >
-              <img src="/icons/sparkle.svg" alt="Sparkle Icon"/>
+              <img src="/icons/sparkle.svg" alt="Sparkle Icon" />
               {cardLabel}
             </Text>
-          </div>
-          <div className="grid gap-1">
+          </figure>
+          <footer className="grid gap-1">
             <Text
               className="w-full overflow-hidden whitespace-nowrap text-ellipsis "
               as="h3"
@@ -102,7 +102,7 @@ export function ProductCard({
                 )}
               </Text>
             </div>
-          </div>
+          </footer>
         </div>
       </Link>
       {quickAdd && (
@@ -125,7 +125,7 @@ export function ProductCard({
           </Text>
         </AddToCartButton>
       )}
-    </div>
+    </article>
   );
 }
 

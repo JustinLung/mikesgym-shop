@@ -1,9 +1,13 @@
 import {defer, type LoaderArgs} from '@shopify/remix-oxygen';
 import {Suspense} from 'react';
 import {Await, Link, useLoaderData} from '@remix-run/react';
-import {ProductSwimlane, FeaturedCollections, Hero} from '~/components';
+import {
+  ProductSwimlane,
+  FeaturedCollections,
+  Hero,
+  ProductCard,
+} from '~/components';
 import {MEDIA_FRAGMENT, PRODUCT_CARD_FRAGMENT} from '~/data/fragments';
-import {getHeroPlaceholder} from '~/lib/placeholders';
 import {seoPayload} from '~/lib/seo.server';
 import type {
   CollectionConnection,
@@ -45,14 +49,6 @@ export async function loader({params, context}: LoaderArgs) {
   return defer(
     {
       shop,
-      featuredProducts: context.storefront.query<{
-        products: ProductConnection;
-      }>(HOMEPAGE_FEATURED_PRODUCTS_QUERY, {
-        variables: {
-          country,
-          language,
-        },
-      }),
       featuredCollections: context.storefront.query<{
         collections: CollectionConnection;
       }>(FEATURED_COLLECTIONS_QUERY, {
@@ -75,28 +71,36 @@ export async function loader({params, context}: LoaderArgs) {
 }
 
 export default function Homepage() {
-  const {featuredProducts} = useLoaderData<typeof loader>();
+  const {featuredCollections} = useLoaderData<typeof loader>();
 
+  console.log(featuredCollections);
   return (
     <>
       <Hero />
       <Marque />
-      {featuredProducts && (
+
+      {featuredCollections && (
         <Suspense>
-          <Await resolve={featuredProducts}>
-            {({products}) => {
-              if (!products?.nodes) return <></>;
+          <Await resolve={featuredCollections}>
+            {({collections}) => {
+              if (!collections?.nodes) return <></>;
+              console.log();
               return (
-                <ProductSwimlane
-                  products={products.nodes}
-                  title="Featured Products"
-                  count={4}
-                />
+                <>
+                  <ProductSwimlane
+                    products={collections.nodes[1].products.nodes}
+                    title={collections.nodes[1].title}
+                    count={4}
+                    type="clothing"
+                    href={`/collections/men`}
+                  />
+                </>
               );
             }}
           </Await>
         </Suspense>
       )}
+
       <section className="relative h-[30rem] md:h-[35rem]">
         <div className="absolute h-full w-full flex flex-col justify-center pl-4 md:pl-12  z-10">
           <h1 className="text-2xl md:text-5xl">
@@ -108,13 +112,13 @@ export default function Homepage() {
           </p>
           <div className="mt-2 flex gap-3">
             <Link
-              to="/products"
+              to="/collections/men"
               className="bg-mg-yellow text-black w-fit px-4 py-1 border-2 border-mg-yellow hover:bg-transparent transition-colors hover:text-mg-yellow"
             >
               SHOP MEN
             </Link>
             <Link
-              to="/about"
+              to="/collections/women"
               className="bg-transparent text-white border-2 border-solid border-white w-fit px-4 py-1 hover:bg-white hover:text-black transition-colors"
             >
               SHOP WOMEN
@@ -129,23 +133,55 @@ export default function Homepage() {
         />
       </section>
 
-      <Suspense>
-        <Await resolve={featuredProducts}>
-          {({products}) => {
-            if (!products?.nodes) return <></>;
-            return (
-              <ProductSwimlane
-                products={products.nodes}
-                title="Featured Products"
-                count={4}
-              />
-            );
-          }}
-        </Await>
-      </Suspense>
+      {featuredCollections && (
+        <Suspense>
+          <Await resolve={featuredCollections}>
+            {({collections}) => {
+              if (!collections?.nodes) return <></>;
+              console.log();
+              return (
+                <>
+                  <ProductSwimlane
+                    products={collections.nodes[0].products.nodes}
+                    title={collections.nodes[0].title}
+                    count={4}
+                    type="clothing"
+                    href={`/collections/women`}
+                    prefetch="intent"
+                  />
+                </>
+              );
+            }}
+          </Await>
+        </Suspense>
+      )}
     </>
   );
 }
+
+// @see: https://shopify.dev/api/storefront/2023-04/queries/collections
+export const FEATURED_COLLECTIONS_QUERY = `#graphql
+  ${PRODUCT_CARD_FRAGMENT}
+  query featuredCollections($country: CountryCode, $language: LanguageCode)
+  @inContext(country: $country, language: $language) {
+    collections(
+      first: 4,
+      sortKey: UPDATED_AT
+    ) {
+      nodes {
+        id
+        title
+        products(first: 8) {
+          nodes {
+            ...ProductCard
+            productType
+            handle
+          }
+        }
+      }
+    }
+  }
+`;
 
 const COLLECTION_CONTENT_FRAGMENT = `#graphql
   ${MEDIA_FRAGMENT}
@@ -186,52 +222,6 @@ const HOMEPAGE_SEO_QUERY = `#graphql
     shop {
       name
       description
-    }
-  }
-`;
-
-const COLLECTION_HERO_QUERY = `#graphql
-  ${COLLECTION_CONTENT_FRAGMENT}
-  query collectionContent($handle: String, $country: CountryCode, $language: LanguageCode)
-  @inContext(country: $country, language: $language) {
-    hero: collection(handle: $handle) {
-      ...CollectionContent
-    }
-  }
-`;
-
-// @see: https://shopify.dev/api/storefront/2023-04/queries/products
-export const HOMEPAGE_FEATURED_PRODUCTS_QUERY = `#graphql
-  ${PRODUCT_CARD_FRAGMENT}
-  query homepageFeaturedProducts($country: CountryCode, $language: LanguageCode)
-  @inContext(country: $country, language: $language) {
-    products(first: 8) {
-      nodes {
-        ...ProductCard
-      }
-    }
-  }
-`;
-
-// @see: https://shopify.dev/api/storefront/2023-04/queries/collections
-export const FEATURED_COLLECTIONS_QUERY = `#graphql
-  query homepageFeaturedCollections($country: CountryCode, $language: LanguageCode)
-  @inContext(country: $country, language: $language) {
-    collections(
-      first: 4,
-      sortKey: UPDATED_AT
-    ) {
-      nodes {
-        id
-        title
-        handle
-        image {
-          altText
-          width
-          height
-          url
-        }
-      }
     }
   }
 `;

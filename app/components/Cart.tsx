@@ -184,7 +184,6 @@ function CartCheckoutActions({checkoutUrl}: {checkoutUrl: string}) {
           Continue to Checkout
         </Button>
       </a>
-      {/* @todo: <CartShopPayButton cart={cart} /> */}
     </div>
   );
 }

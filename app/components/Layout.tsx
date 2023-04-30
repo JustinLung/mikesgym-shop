@@ -121,7 +121,7 @@ export function MenuDrawer({
 
 function MenuMobileNav({onClose}: {onClose: () => void}) {
   return (
-    <nav className="grid gap-4 p-6 sm:gap-6 px-9">
+    <nav className="grid gap-4 p-6 sm:gap-6 md:px-12">
       <Link to="/" onClick={onClose}>
         Home
       </Link>
@@ -133,6 +133,14 @@ function MenuMobileNav({onClose}: {onClose: () => void}) {
       </Link>
       <Link to="/contact" onClick={onClose}>
         Contact
+      </Link>
+      <Link
+        to="https://mikesgym.com/memberships/"
+        target="_blank"
+        rel="noreferrer noopener"
+        className="bg-mg-yellow text-black py-2 px-4 border-2 border-mg-yellow hover:bg-transparent transition-colors hover:text-mg-yellow w-fit"
+      >
+        BECOME A MEMBER
       </Link>
     </nav>
   );

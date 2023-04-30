@@ -31305,7 +31305,7 @@ function MenuDrawer({
   }, this);
 }
 function MenuMobileNav({ onClose }) {
-  return /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("nav", { className: "grid gap-4 p-6 sm:gap-6 px-9", children: [
+  return /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("nav", { className: "grid gap-4 p-6 sm:gap-6 md:px-12", children: [
     /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)(Link3, { to: "/", onClick: onClose, children: "Home" }, void 0, !1, {
       fileName: "app/components/Layout.tsx",
       lineNumber: 125,
@@ -31325,7 +31325,25 @@ function MenuMobileNav({ onClose }) {
       fileName: "app/components/Layout.tsx",
       lineNumber: 134,
       columnNumber: 7
-    }, this)
+    }, this),
+    /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)(
+      Link3,
+      {
+        to: "https://mikesgym.com/memberships/",
+        target: "_blank",
+        rel: "noreferrer noopener",
+        className: "bg-mg-yellow text-black py-2 px-4 border-2 border-mg-yellow hover:bg-transparent transition-colors hover:text-mg-yellow w-fit",
+        children: "BECOME A MEMBER"
+      },
+      void 0,
+      !1,
+      {
+        fileName: "app/components/Layout.tsx",
+        lineNumber: 137,
+        columnNumber: 7
+      },
+      this
+    )
   ] }, void 0, !0, {
     fileName: "app/components/Layout.tsx",
     lineNumber: 124,
@@ -31350,29 +31368,9 @@ function MobileHeader({
             className: "relative flex items-center justify-center w-8 h-8",
             children: /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)(IconMenu, {}, void 0, !1, {
               fileName: "app/components/Layout.tsx",
-              lineNumber: 160,
+              lineNumber: 168,
               columnNumber: 11
             }, this)
-          },
-          void 0,
-          !1,
-          {
-            fileName: "app/components/Layout.tsx",
-            lineNumber: 156,
-            columnNumber: 9
-          },
-          this
-        ) }, void 0, !1, {
-          fileName: "app/components/Layout.tsx",
-          lineNumber: 155,
-          columnNumber: 7
-        }, this),
-        /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)(Link3, { className: "font-bold", to: "/", prefetch: "intent", children: /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)(
-          "img",
-          {
-            src: "/images/logo-mikesgym.png",
-            alt: "Mike's Gym Logo",
-            className: "w-25"
           },
           void 0,
           !1,
@@ -31387,13 +31385,33 @@ function MobileHeader({
           lineNumber: 163,
           columnNumber: 7
         }, this),
-        /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("div", { className: "flex items-center justify-end w-full gap-4", children: /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)(CartCount, { isHome, openCart }, void 0, !1, {
+        /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)(Link3, { className: "font-bold", to: "/", prefetch: "intent", children: /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)(
+          "img",
+          {
+            src: "/images/logo-mikesgym.png",
+            alt: "Mike's Gym Logo",
+            className: "w-25"
+          },
+          void 0,
+          !1,
+          {
+            fileName: "app/components/Layout.tsx",
+            lineNumber: 172,
+            columnNumber: 9
+          },
+          this
+        ) }, void 0, !1, {
           fileName: "app/components/Layout.tsx",
           lineNumber: 171,
+          columnNumber: 7
+        }, this),
+        /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("div", { className: "flex items-center justify-end w-full gap-4", children: /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)(CartCount, { isHome, openCart }, void 0, !1, {
+          fileName: "app/components/Layout.tsx",
+          lineNumber: 179,
           columnNumber: 9
         }, this) }, void 0, !1, {
           fileName: "app/components/Layout.tsx",
-          lineNumber: 170,
+          lineNumber: 178,
           columnNumber: 7
         }, this)
       ]
@@ -31402,7 +31420,7 @@ function MobileHeader({
     !0,
     {
       fileName: "app/components/Layout.tsx",
-      lineNumber: 151,
+      lineNumber: 159,
       columnNumber: 5
     },
     this
@@ -31429,34 +31447,34 @@ function DesktopHeader({
           !1,
           {
             fileName: "app/components/Layout.tsx",
-            lineNumber: 191,
+            lineNumber: 199,
             columnNumber: 9
           },
           this
         ) }, void 0, !1, {
           fileName: "app/components/Layout.tsx",
-          lineNumber: 190,
+          lineNumber: 198,
           columnNumber: 7
         }, this),
         /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("nav", { className: "flex gap-8 ml-auto", children: [
           /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)(Link3, { to: "/products", children: "Products" }, void 0, !1, {
             fileName: "app/components/Layout.tsx",
-            lineNumber: 198,
+            lineNumber: 206,
             columnNumber: 9
           }, this),
           /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)(Link3, { to: "/about", children: "About" }, void 0, !1, {
             fileName: "app/components/Layout.tsx",
-            lineNumber: 199,
+            lineNumber: 207,
             columnNumber: 9
           }, this),
           /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)(Link3, { to: "/contact", children: "Contact" }, void 0, !1, {
             fileName: "app/components/Layout.tsx",
-            lineNumber: 200,
+            lineNumber: 208,
             columnNumber: 9
           }, this)
         ] }, void 0, !0, {
           fileName: "app/components/Layout.tsx",
-          lineNumber: 197,
+          lineNumber: 205,
           columnNumber: 7
         }, this),
         /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("div", { className: "flex justify-center items-center gap-4 ml-auto", children: [
@@ -31473,19 +31491,19 @@ function DesktopHeader({
             !1,
             {
               fileName: "app/components/Layout.tsx",
-              lineNumber: 203,
+              lineNumber: 211,
               columnNumber: 9
             },
             this
           ),
           /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)(CartCount, { isHome, openCart }, void 0, !1, {
             fileName: "app/components/Layout.tsx",
-            lineNumber: 211,
+            lineNumber: 219,
             columnNumber: 9
           }, this)
         ] }, void 0, !0, {
           fileName: "app/components/Layout.tsx",
-          lineNumber: 202,
+          lineNumber: 210,
           columnNumber: 7
         }, this)
       ]
@@ -31494,7 +31512,7 @@ function DesktopHeader({
     !0,
     {
       fileName: "app/components/Layout.tsx",
-      lineNumber: 186,
+      lineNumber: 194,
       columnNumber: 5
     },
     this
@@ -31508,7 +31526,7 @@ function CartCount({
   let [root2] = useMatches2();
   return /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)(import_react13.Suspense, { fallback: /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)(Badge, { count: 0, dark: isHome, openCart }, void 0, !1, {
     fileName: "app/components/Layout.tsx",
-    lineNumber: 227,
+    lineNumber: 235,
     columnNumber: 25
   }, this), children: /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)(Await2, { resolve: (_a2 = root2.data) == null ? void 0 : _a2.cart, children: (cart) => /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)(
     Badge,
@@ -31521,17 +31539,17 @@ function CartCount({
     !1,
     {
       fileName: "app/components/Layout.tsx",
-      lineNumber: 230,
+      lineNumber: 238,
       columnNumber: 11
     },
     this
   ) }, void 0, !1, {
     fileName: "app/components/Layout.tsx",
-    lineNumber: 228,
+    lineNumber: 236,
     columnNumber: 7
   }, this) }, void 0, !1, {
     fileName: "app/components/Layout.tsx",
-    lineNumber: 227,
+    lineNumber: 235,
     columnNumber: 5
   }, this);
 }
@@ -31544,21 +31562,21 @@ function Badge({
     () => /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)(import_jsx_dev_runtime2.Fragment, { children: [
       /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)(IconBag, {}, void 0, !1, {
         fileName: "app/components/Layout.tsx",
-        lineNumber: 255,
+        lineNumber: 263,
         columnNumber: 9
       }, this),
       /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("div", { className: "absolute bottom-1 right-1 text-[0.625rem] font-medium subpixel-antialiased h-3 min-w-[0.75rem] flex items-center justify-center leading-none text-center rounded-full w-auto px-[0.125rem] pb-px", children: /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("span", { children: count || 0 }, void 0, !1, {
         fileName: "app/components/Layout.tsx",
-        lineNumber: 257,
+        lineNumber: 265,
         columnNumber: 11
       }, this) }, void 0, !1, {
         fileName: "app/components/Layout.tsx",
-        lineNumber: 256,
+        lineNumber: 264,
         columnNumber: 9
       }, this)
     ] }, void 0, !0, {
       fileName: "app/components/Layout.tsx",
-      lineNumber: 254,
+      lineNumber: 262,
       columnNumber: 7
     }, this),
     [count, dark]
@@ -31574,7 +31592,7 @@ function Badge({
     !1,
     {
       fileName: "app/components/Layout.tsx",
-      lineNumber: 265,
+      lineNumber: 273,
       columnNumber: 5
     },
     this
@@ -31589,7 +31607,7 @@ function Badge({
     !1,
     {
       fileName: "app/components/Layout.tsx",
-      lineNumber: 272,
+      lineNumber: 280,
       columnNumber: 5
     },
     this
@@ -34104,7 +34122,7 @@ function ProductCard({
     price: firstVariant.price.amount,
     quantity: 1
   };
-  return /* @__PURE__ */ (0, import_jsx_dev_runtime7.jsxDEV)("div", { className: "flex flex-col gap-2", children: [
+  return /* @__PURE__ */ (0, import_jsx_dev_runtime7.jsxDEV)("article", { className: "flex flex-col gap-2", children: [
     /* @__PURE__ */ (0, import_jsx_dev_runtime7.jsxDEV)(
       Link3,
       {
@@ -34112,7 +34130,7 @@ function ProductCard({
         to: `/products/${product2.handle}`,
         prefetch: "intent",
         children: /* @__PURE__ */ (0, import_jsx_dev_runtime7.jsxDEV)("div", { className: clsx_m_default("grid gap-4", className), children: [
-          /* @__PURE__ */ (0, import_jsx_dev_runtime7.jsxDEV)("div", { className: "card-image aspect-[4/5] bg-primary/5", children: [
+          /* @__PURE__ */ (0, import_jsx_dev_runtime7.jsxDEV)("figure", { className: "card-image aspect-[4/5] bg-primary/5", children: [
             image && /* @__PURE__ */ (0, import_jsx_dev_runtime7.jsxDEV)(
               Image,
               {
@@ -34161,7 +34179,7 @@ function ProductCard({
             lineNumber: 67,
             columnNumber: 11
           }, this),
-          /* @__PURE__ */ (0, import_jsx_dev_runtime7.jsxDEV)("div", { className: "grid gap-1", children: [
+          /* @__PURE__ */ (0, import_jsx_dev_runtime7.jsxDEV)("footer", { className: "grid gap-1", children: [
             /* @__PURE__ */ (0, import_jsx_dev_runtime7.jsxDEV)(
               Text,
               {
@@ -34283,31 +34301,62 @@ function CompareAtPrice({
 var import_jsx_dev_runtime8 = __toESM(require_jsx_dev_runtime()), mockProducts = new Array(12).fill("");
 function ProductSwimlane({
   title = "Featured Products",
+  type = "T-SHIRTS",
+  href = "/",
   products = mockProducts,
   count = 12,
   ...props
 }) {
-  return /* @__PURE__ */ (0, import_jsx_dev_runtime8.jsxDEV)(Section, { heading: title, padding: "y", ...props, children: /* @__PURE__ */ (0, import_jsx_dev_runtime8.jsxDEV)("div", { className: "swimlane hiddenScroll md:pb-8 md:scroll-px-8 lg:scroll-px-12 md:px-8 lg:px-12", children: products.map((product2) => /* @__PURE__ */ (0, import_jsx_dev_runtime8.jsxDEV)(
-    ProductCard,
-    {
-      product: product2,
-      className: "snap-start w-80"
-    },
-    product2.id,
-    !1,
-    {
+  return /* @__PURE__ */ (0, import_jsx_dev_runtime8.jsxDEV)("section", { children: [
+    /* @__PURE__ */ (0, import_jsx_dev_runtime8.jsxDEV)("header", { className: "px-[1.5rem] md:px-8 lg:px-12 my-4 uppercase flex justify-between items-center", children: [
+      /* @__PURE__ */ (0, import_jsx_dev_runtime8.jsxDEV)("div", { className: "flex flex-col", children: [
+        /* @__PURE__ */ (0, import_jsx_dev_runtime8.jsxDEV)("span", { className: "text-[#767676]", children: title }, void 0, !1, {
+          fileName: "app/components/ProductSwimlane.tsx",
+          lineNumber: 24,
+          columnNumber: 11
+        }, this),
+        /* @__PURE__ */ (0, import_jsx_dev_runtime8.jsxDEV)("h2", { className: "text-mg-yellow text-2xl", children: type }, void 0, !1, {
+          fileName: "app/components/ProductSwimlane.tsx",
+          lineNumber: 25,
+          columnNumber: 11
+        }, this)
+      ] }, void 0, !0, {
+        fileName: "app/components/ProductSwimlane.tsx",
+        lineNumber: 23,
+        columnNumber: 9
+      }, this),
+      /* @__PURE__ */ (0, import_jsx_dev_runtime8.jsxDEV)(Link3, { to: href, children: "VIEW ALL" }, void 0, !1, {
+        fileName: "app/components/ProductSwimlane.tsx",
+        lineNumber: 27,
+        columnNumber: 9
+      }, this)
+    ] }, void 0, !0, {
       fileName: "app/components/ProductSwimlane.tsx",
-      lineNumber: 20,
-      columnNumber: 11
-    },
-    this
-  )) }, void 0, !1, {
+      lineNumber: 22,
+      columnNumber: 7
+    }, this),
+    /* @__PURE__ */ (0, import_jsx_dev_runtime8.jsxDEV)("div", { className: "swimlane hiddenScroll md:pb-8 md:scroll-px-8 lg:scroll-px-12 md:px-8 lg:px-12", children: products.map((product2) => /* @__PURE__ */ (0, import_jsx_dev_runtime8.jsxDEV)(
+      ProductCard,
+      {
+        product: product2,
+        className: "snap-start w-80"
+      },
+      product2.id,
+      !1,
+      {
+        fileName: "app/components/ProductSwimlane.tsx",
+        lineNumber: 31,
+        columnNumber: 11
+      },
+      this
+    )) }, void 0, !1, {
+      fileName: "app/components/ProductSwimlane.tsx",
+      lineNumber: 29,
+      columnNumber: 7
+    }, this)
+  ] }, void 0, !0, {
     fileName: "app/components/ProductSwimlane.tsx",
-    lineNumber: 18,
-    columnNumber: 7
-  }, this) }, void 0, !1, {
-    fileName: "app/components/ProductSwimlane.tsx",
-    lineNumber: 17,
+    lineNumber: 21,
     columnNumber: 5
   }, this);
 }
@@ -34946,37 +34995,37 @@ function CartSummary({
   }[layout], children: [
     /* @__PURE__ */ (0, import_jsx_dev_runtime12.jsxDEV)("h2", { id: "summary-heading", className: "sr-only", children: "Order summary" }, void 0, !1, {
       fileName: "app/components/Cart.tsx",
-      lineNumber: 208,
+      lineNumber: 207,
       columnNumber: 7
     }, this),
     /* @__PURE__ */ (0, import_jsx_dev_runtime12.jsxDEV)("dl", { className: "grid", children: /* @__PURE__ */ (0, import_jsx_dev_runtime12.jsxDEV)("div", { className: "flex items-center justify-between font-medium", children: [
       /* @__PURE__ */ (0, import_jsx_dev_runtime12.jsxDEV)(Text, { as: "dt", children: "Subtotal" }, void 0, !1, {
         fileName: "app/components/Cart.tsx",
-        lineNumber: 213,
+        lineNumber: 212,
         columnNumber: 11
       }, this),
       /* @__PURE__ */ (0, import_jsx_dev_runtime12.jsxDEV)(Text, { as: "dd", "data-test": "subtotal", children: (_a2 = cost == null ? void 0 : cost.subtotalAmount) != null && _a2.amount ? /* @__PURE__ */ (0, import_jsx_dev_runtime12.jsxDEV)(Money, { data: cost == null ? void 0 : cost.subtotalAmount }, void 0, !1, {
         fileName: "app/components/Cart.tsx",
-        lineNumber: 216,
+        lineNumber: 215,
         columnNumber: 15
       }, this) : "-" }, void 0, !1, {
         fileName: "app/components/Cart.tsx",
-        lineNumber: 214,
+        lineNumber: 213,
         columnNumber: 11
       }, this)
     ] }, void 0, !0, {
       fileName: "app/components/Cart.tsx",
-      lineNumber: 212,
+      lineNumber: 211,
       columnNumber: 9
     }, this) }, void 0, !1, {
       fileName: "app/components/Cart.tsx",
-      lineNumber: 211,
+      lineNumber: 210,
       columnNumber: 7
     }, this),
     children
   ] }, void 0, !0, {
     fileName: "app/components/Cart.tsx",
-    lineNumber: 207,
+    lineNumber: 206,
     columnNumber: 5
   }, this);
 }
@@ -34999,28 +35048,28 @@ function CartLineItem({ line }) {
       !1,
       {
         fileName: "app/components/Cart.tsx",
-        lineNumber: 239,
+        lineNumber: 238,
         columnNumber: 11
       },
       this
     ) }, void 0, !1, {
       fileName: "app/components/Cart.tsx",
-      lineNumber: 237,
+      lineNumber: 236,
       columnNumber: 7
     }, this),
     /* @__PURE__ */ (0, import_jsx_dev_runtime12.jsxDEV)("div", { className: "flex justify-between flex-grow", children: [
       /* @__PURE__ */ (0, import_jsx_dev_runtime12.jsxDEV)("div", { className: "grid gap-2", children: [
         /* @__PURE__ */ (0, import_jsx_dev_runtime12.jsxDEV)(Heading, { as: "h3", size: "copy", children: (_a2 = merchandise == null ? void 0 : merchandise.product) != null && _a2.handle ? /* @__PURE__ */ (0, import_jsx_dev_runtime12.jsxDEV)(Link3, { to: `/products/${merchandise.product.handle}`, children: ((_b = merchandise == null ? void 0 : merchandise.product) == null ? void 0 : _b.title) || "" }, void 0, !1, {
           fileName: "app/components/Cart.tsx",
-          lineNumber: 253,
+          lineNumber: 252,
           columnNumber: 15
         }, this) : /* @__PURE__ */ (0, import_jsx_dev_runtime12.jsxDEV)(Text, { children: ((_c = merchandise == null ? void 0 : merchandise.product) == null ? void 0 : _c.title) || "" }, void 0, !1, {
           fileName: "app/components/Cart.tsx",
-          lineNumber: 257,
+          lineNumber: 256,
           columnNumber: 15
         }, this) }, void 0, !1, {
           fileName: "app/components/Cart.tsx",
-          lineNumber: 251,
+          lineNumber: 250,
           columnNumber: 11
         }, this),
         /* @__PURE__ */ (0, import_jsx_dev_runtime12.jsxDEV)("div", { className: "grid pb-2", children: ((merchandise == null ? void 0 : merchandise.selectedOptions) || []).map((option) => /* @__PURE__ */ (0, import_jsx_dev_runtime12.jsxDEV)(Text, { color: "subtle", children: [
@@ -35029,55 +35078,55 @@ function CartLineItem({ line }) {
           option.value
         ] }, option.name, !0, {
           fileName: "app/components/Cart.tsx",
-          lineNumber: 263,
+          lineNumber: 262,
           columnNumber: 15
         }, this)) }, void 0, !1, {
           fileName: "app/components/Cart.tsx",
-          lineNumber: 261,
+          lineNumber: 260,
           columnNumber: 11
         }, this),
         /* @__PURE__ */ (0, import_jsx_dev_runtime12.jsxDEV)("div", { className: "flex items-center gap-2", children: [
           /* @__PURE__ */ (0, import_jsx_dev_runtime12.jsxDEV)("div", { className: "flex justify-start text-copy", children: /* @__PURE__ */ (0, import_jsx_dev_runtime12.jsxDEV)(CartLineQuantityAdjust, { line }, void 0, !1, {
             fileName: "app/components/Cart.tsx",
-            lineNumber: 271,
+            lineNumber: 270,
             columnNumber: 15
           }, this) }, void 0, !1, {
             fileName: "app/components/Cart.tsx",
-            lineNumber: 270,
+            lineNumber: 269,
             columnNumber: 13
           }, this),
           /* @__PURE__ */ (0, import_jsx_dev_runtime12.jsxDEV)(ItemRemoveButton, { lineIds: [id] }, void 0, !1, {
             fileName: "app/components/Cart.tsx",
-            lineNumber: 273,
+            lineNumber: 272,
             columnNumber: 13
           }, this)
         ] }, void 0, !0, {
           fileName: "app/components/Cart.tsx",
-          lineNumber: 269,
+          lineNumber: 268,
           columnNumber: 11
         }, this)
       ] }, void 0, !0, {
         fileName: "app/components/Cart.tsx",
-        lineNumber: 250,
+        lineNumber: 249,
         columnNumber: 9
       }, this),
       /* @__PURE__ */ (0, import_jsx_dev_runtime12.jsxDEV)(Text, { children: /* @__PURE__ */ (0, import_jsx_dev_runtime12.jsxDEV)(CartLinePrice, { line, as: "span" }, void 0, !1, {
         fileName: "app/components/Cart.tsx",
-        lineNumber: 277,
+        lineNumber: 276,
         columnNumber: 11
       }, this) }, void 0, !1, {
         fileName: "app/components/Cart.tsx",
-        lineNumber: 276,
+        lineNumber: 275,
         columnNumber: 9
       }, this)
     ] }, void 0, !0, {
       fileName: "app/components/Cart.tsx",
-      lineNumber: 249,
+      lineNumber: 248,
       columnNumber: 7
     }, this)
   ] }, id, !0, {
     fileName: "app/components/Cart.tsx",
-    lineNumber: 236,
+    lineNumber: 235,
     columnNumber: 5
   }, this);
 }
@@ -35095,14 +35144,14 @@ function ItemRemoveButton({ lineIds }) {
       !1,
       {
         fileName: "app/components/Cart.tsx",
-        lineNumber: 289,
+        lineNumber: 288,
         columnNumber: 7
       },
       this
     ),
     /* @__PURE__ */ (0, import_jsx_dev_runtime12.jsxDEV)("input", { type: "hidden", name: "linesIds", value: JSON.stringify(lineIds) }, void 0, !1, {
       fileName: "app/components/Cart.tsx",
-      lineNumber: 294,
+      lineNumber: 293,
       columnNumber: 7
     }, this),
     /* @__PURE__ */ (0, import_jsx_dev_runtime12.jsxDEV)(
@@ -35113,12 +35162,12 @@ function ItemRemoveButton({ lineIds }) {
         children: [
           /* @__PURE__ */ (0, import_jsx_dev_runtime12.jsxDEV)("span", { className: "sr-only", children: "Remove" }, void 0, !1, {
             fileName: "app/components/Cart.tsx",
-            lineNumber: 299,
+            lineNumber: 298,
             columnNumber: 9
           }, this),
           /* @__PURE__ */ (0, import_jsx_dev_runtime12.jsxDEV)(IconRemove, { "aria-hidden": "true" }, void 0, !1, {
             fileName: "app/components/Cart.tsx",
-            lineNumber: 300,
+            lineNumber: 299,
             columnNumber: 9
           }, this)
         ]
@@ -35127,14 +35176,14 @@ function ItemRemoveButton({ lineIds }) {
       !0,
       {
         fileName: "app/components/Cart.tsx",
-        lineNumber: 295,
+        lineNumber: 294,
         columnNumber: 7
       },
       this
     )
   ] }, void 0, !0, {
     fileName: "app/components/Cart.tsx",
-    lineNumber: 288,
+    lineNumber: 287,
     columnNumber: 5
   }, this);
 }
@@ -35148,7 +35197,7 @@ function CartLineQuantityAdjust({ line }) {
       quantity
     ] }, void 0, !0, {
       fileName: "app/components/Cart.tsx",
-      lineNumber: 314,
+      lineNumber: 313,
       columnNumber: 7
     }, this),
     /* @__PURE__ */ (0, import_jsx_dev_runtime12.jsxDEV)("div", { className: "flex items-center border rounded", children: [
@@ -35162,7 +35211,7 @@ function CartLineQuantityAdjust({ line }) {
           disabled: quantity <= 1,
           children: /* @__PURE__ */ (0, import_jsx_dev_runtime12.jsxDEV)("span", { className: "text-white", children: "\u2212" }, void 0, !1, {
             fileName: "app/components/Cart.tsx",
-            lineNumber: 326,
+            lineNumber: 325,
             columnNumber: 13
           }, this)
         },
@@ -35170,18 +35219,18 @@ function CartLineQuantityAdjust({ line }) {
         !1,
         {
           fileName: "app/components/Cart.tsx",
-          lineNumber: 319,
+          lineNumber: 318,
           columnNumber: 11
         },
         this
       ) }, void 0, !1, {
         fileName: "app/components/Cart.tsx",
-        lineNumber: 318,
+        lineNumber: 317,
         columnNumber: 9
       }, this),
       /* @__PURE__ */ (0, import_jsx_dev_runtime12.jsxDEV)("div", { className: "px-2 text-center", "data-test": "item-quantity", children: quantity }, void 0, !1, {
         fileName: "app/components/Cart.tsx",
-        lineNumber: 330,
+        lineNumber: 329,
         columnNumber: 9
       }, this),
       /* @__PURE__ */ (0, import_jsx_dev_runtime12.jsxDEV)(UpdateCartButton, { lines: [{ id: lineId, quantity: nextQuantity }], children: /* @__PURE__ */ (0, import_jsx_dev_runtime12.jsxDEV)(
@@ -35193,7 +35242,7 @@ function CartLineQuantityAdjust({ line }) {
           "aria-label": "Increase quantity",
           children: /* @__PURE__ */ (0, import_jsx_dev_runtime12.jsxDEV)("span", { className: "text-white", children: "+" }, void 0, !1, {
             fileName: "app/components/Cart.tsx",
-            lineNumber: 341,
+            lineNumber: 340,
             columnNumber: 13
           }, this)
         },
@@ -35201,23 +35250,23 @@ function CartLineQuantityAdjust({ line }) {
         !1,
         {
           fileName: "app/components/Cart.tsx",
-          lineNumber: 335,
+          lineNumber: 334,
           columnNumber: 11
         },
         this
       ) }, void 0, !1, {
         fileName: "app/components/Cart.tsx",
-        lineNumber: 334,
+        lineNumber: 333,
         columnNumber: 9
       }, this)
     ] }, void 0, !0, {
       fileName: "app/components/Cart.tsx",
-      lineNumber: 317,
+      lineNumber: 316,
       columnNumber: 7
     }, this)
   ] }, void 0, !0, {
     fileName: "app/components/Cart.tsx",
-    lineNumber: 313,
+    lineNumber: 312,
     columnNumber: 5
   }, this);
 }
@@ -35229,18 +35278,18 @@ function UpdateCartButton({
   return /* @__PURE__ */ (0, import_jsx_dev_runtime12.jsxDEV)(fetcher.Form, { action: "/cart", method: "post", children: [
     /* @__PURE__ */ (0, import_jsx_dev_runtime12.jsxDEV)("input", { type: "hidden", name: "cartAction", value: "UPDATE_CART" /* UPDATE_CART */ }, void 0, !1, {
       fileName: "app/components/Cart.tsx",
-      lineNumber: 360,
+      lineNumber: 359,
       columnNumber: 7
     }, this),
     /* @__PURE__ */ (0, import_jsx_dev_runtime12.jsxDEV)("input", { type: "hidden", name: "lines", value: JSON.stringify(lines) }, void 0, !1, {
       fileName: "app/components/Cart.tsx",
-      lineNumber: 361,
+      lineNumber: 360,
       columnNumber: 7
     }, this),
     children
   ] }, void 0, !0, {
     fileName: "app/components/Cart.tsx",
-    lineNumber: 359,
+    lineNumber: 358,
     columnNumber: 5
   }, this);
 }
@@ -35255,7 +35304,7 @@ function CartLinePrice({
   let moneyV2 = priceType === "regular" ? line.cost.totalAmount : line.cost.compareAtAmountPerQuantity;
   return moneyV2 == null ? null : /* @__PURE__ */ (0, import_jsx_dev_runtime12.jsxDEV)(Money, { withoutTrailingZeros: !0, ...passthroughProps, data: moneyV2 }, void 0, !1, {
     fileName: "app/components/Cart.tsx",
-    lineNumber: 387,
+    lineNumber: 386,
     columnNumber: 10
   }, this);
 }
@@ -35278,7 +35327,7 @@ function CartEmpty({
     /* @__PURE__ */ (0, import_jsx_dev_runtime12.jsxDEV)("section", { className: "grid gap-6", children: [
       /* @__PURE__ */ (0, import_jsx_dev_runtime12.jsxDEV)(Text, { format: !0, children: "Looks like you haven\u2019t added anything yet, let\u2019s get you started!" }, void 0, !1, {
         fileName: "app/components/Cart.tsx",
-        lineNumber: 416,
+        lineNumber: 415,
         columnNumber: 9
       }, this),
       /* @__PURE__ */ (0, import_jsx_dev_runtime12.jsxDEV)("div", { children: /* @__PURE__ */ (0, import_jsx_dev_runtime12.jsxDEV)(
@@ -35292,18 +35341,18 @@ function CartEmpty({
         !1,
         {
           fileName: "app/components/Cart.tsx",
-          lineNumber: 421,
+          lineNumber: 420,
           columnNumber: 11
         },
         this
       ) }, void 0, !1, {
         fileName: "app/components/Cart.tsx",
-        lineNumber: 420,
+        lineNumber: 419,
         columnNumber: 9
       }, this)
     ] }, void 0, !0, {
       fileName: "app/components/Cart.tsx",
-      lineNumber: 415,
+      lineNumber: 414,
       columnNumber: 7
     }, this),
     /* @__PURE__ */ (0, import_jsx_dev_runtime12.jsxDEV)("section", { className: "grid gap-8 pt-16", children: /* @__PURE__ */ (0, import_jsx_dev_runtime12.jsxDEV)(
@@ -35319,18 +35368,18 @@ function CartEmpty({
       !1,
       {
         fileName: "app/components/Cart.tsx",
-        lineNumber: 430,
+        lineNumber: 429,
         columnNumber: 9
       },
       this
     ) }, void 0, !1, {
       fileName: "app/components/Cart.tsx",
-      lineNumber: 429,
+      lineNumber: 428,
       columnNumber: 7
     }, this)
   ] }, void 0, !0, {
     fileName: "app/components/Cart.tsx",
-    lineNumber: 414,
+    lineNumber: 413,
     columnNumber: 5
   }, this);
 }
@@ -37461,7 +37510,7 @@ function NotFound({ type = "page" }) {
 }
 
 // app/styles/app.css
-var app_default = "/build/_assets/app-DX55OBNS.css";
+var app_default = "/build/_assets/app-PQXC5NUN.css";
 
 // public/favicon.svg
 var favicon_default = "/build/_assets/favicon-5FIZBM2K.svg";
@@ -44081,7 +44130,6 @@ function Component3() {
 var lang_index_exports = {};
 __export(lang_index_exports, {
   FEATURED_COLLECTIONS_QUERY: () => FEATURED_COLLECTIONS_QUERY,
-  HOMEPAGE_FEATURED_PRODUCTS_QUERY: () => HOMEPAGE_FEATURED_PRODUCTS_QUERY,
   default: () => Homepage,
   headers: () => headers11,
   loader: () => loader24
@@ -44193,12 +44241,6 @@ async function loader24({ params, context }) {
   return defer3(
     {
       shop,
-      featuredProducts: context.storefront.query(HOMEPAGE_FEATURED_PRODUCTS_QUERY, {
-        variables: {
-          country,
-          language
-        }
-      }),
       featuredCollections: context.storefront.query(FEATURED_COLLECTIONS_QUERY, {
         variables: {
           country,
@@ -44218,44 +44260,50 @@ async function loader24({ params, context }) {
   );
 }
 function Homepage() {
-  let { featuredProducts } = useLoaderData2();
-  return /* @__PURE__ */ (0, import_jsx_dev_runtime51.jsxDEV)(import_jsx_dev_runtime51.Fragment, { children: [
+  let { featuredCollections } = useLoaderData2();
+  return console.log(featuredCollections), /* @__PURE__ */ (0, import_jsx_dev_runtime51.jsxDEV)(import_jsx_dev_runtime51.Fragment, { children: [
     /* @__PURE__ */ (0, import_jsx_dev_runtime51.jsxDEV)(Hero, {}, void 0, !1, {
       fileName: "app/routes/($lang)._index.tsx",
-      lineNumber: 82,
+      lineNumber: 79,
       columnNumber: 7
     }, this),
     /* @__PURE__ */ (0, import_jsx_dev_runtime51.jsxDEV)(Marque, {}, void 0, !1, {
       fileName: "app/routes/($lang)._index.tsx",
-      lineNumber: 83,
+      lineNumber: 80,
       columnNumber: 7
     }, this),
-    featuredProducts && /* @__PURE__ */ (0, import_jsx_dev_runtime51.jsxDEV)(import_react106.Suspense, { children: /* @__PURE__ */ (0, import_jsx_dev_runtime51.jsxDEV)(Await2, { resolve: featuredProducts, children: ({ products }) => products != null && products.nodes ? /* @__PURE__ */ (0, import_jsx_dev_runtime51.jsxDEV)(
+    featuredCollections && /* @__PURE__ */ (0, import_jsx_dev_runtime51.jsxDEV)(import_react106.Suspense, { children: /* @__PURE__ */ (0, import_jsx_dev_runtime51.jsxDEV)(Await2, { resolve: featuredCollections, children: ({ collections }) => collections != null && collections.nodes ? (console.log(), /* @__PURE__ */ (0, import_jsx_dev_runtime51.jsxDEV)(import_jsx_dev_runtime51.Fragment, { children: /* @__PURE__ */ (0, import_jsx_dev_runtime51.jsxDEV)(
       ProductSwimlane,
       {
-        products: products.nodes,
-        title: "Featured Products",
-        count: 4
+        products: collections.nodes[1].products.nodes,
+        title: collections.nodes[1].title,
+        count: 4,
+        type: "clothing",
+        href: "/collections/men"
       },
       void 0,
       !1,
       {
         fileName: "app/routes/($lang)._index.tsx",
         lineNumber: 90,
-        columnNumber: 17
+        columnNumber: 19
       },
       this
-    ) : /* @__PURE__ */ (0, import_jsx_dev_runtime51.jsxDEV)(import_jsx_dev_runtime51.Fragment, {}, void 0, !1, {
+    ) }, void 0, !1, {
       fileName: "app/routes/($lang)._index.tsx",
-      lineNumber: 88,
-      columnNumber: 44
-    }, this) }, void 0, !1, {
+      lineNumber: 89,
+      columnNumber: 17
+    }, this)) : /* @__PURE__ */ (0, import_jsx_dev_runtime51.jsxDEV)(import_jsx_dev_runtime51.Fragment, {}, void 0, !1, {
       fileName: "app/routes/($lang)._index.tsx",
       lineNumber: 86,
+      columnNumber: 47
+    }, this) }, void 0, !1, {
+      fileName: "app/routes/($lang)._index.tsx",
+      lineNumber: 84,
       columnNumber: 11
     }, this) }, void 0, !1, {
       fileName: "app/routes/($lang)._index.tsx",
-      lineNumber: 85,
+      lineNumber: 83,
       columnNumber: 9
     }, this),
     /* @__PURE__ */ (0, import_jsx_dev_runtime51.jsxDEV)("section", { className: "relative h-[30rem] md:h-[35rem]", children: [
@@ -44264,25 +44312,25 @@ function Homepage() {
           "YOU\u2019VE PUT IN THE WORK. ",
           /* @__PURE__ */ (0, import_jsx_dev_runtime51.jsxDEV)("br", {}, void 0, !1, {
             fileName: "app/routes/($lang)._index.tsx",
-            lineNumber: 103,
+            lineNumber: 107,
             columnNumber: 37
           }, this),
           " NOW SHOW OFF THE RESULTS."
         ] }, void 0, !0, {
           fileName: "app/routes/($lang)._index.tsx",
-          lineNumber: 102,
+          lineNumber: 106,
           columnNumber: 11
         }, this),
         /* @__PURE__ */ (0, import_jsx_dev_runtime51.jsxDEV)("p", { className: "text-lg md:text-xl font-light pt-2 max-w-md", children: "Flex what you\u2019ve built with physique-enhancing cuts,compressive fits and comfortable lifting essentials." }, void 0, !1, {
           fileName: "app/routes/($lang)._index.tsx",
-          lineNumber: 105,
+          lineNumber: 109,
           columnNumber: 11
         }, this),
         /* @__PURE__ */ (0, import_jsx_dev_runtime51.jsxDEV)("div", { className: "mt-2 flex gap-3", children: [
           /* @__PURE__ */ (0, import_jsx_dev_runtime51.jsxDEV)(
             Link2,
             {
-              to: "/products",
+              to: "/collections/men",
               className: "bg-mg-yellow text-black w-fit px-4 py-1 border-2 border-mg-yellow hover:bg-transparent transition-colors hover:text-mg-yellow",
               children: "SHOP MEN"
             },
@@ -44290,7 +44338,7 @@ function Homepage() {
             !1,
             {
               fileName: "app/routes/($lang)._index.tsx",
-              lineNumber: 110,
+              lineNumber: 114,
               columnNumber: 13
             },
             this
@@ -44298,7 +44346,7 @@ function Homepage() {
           /* @__PURE__ */ (0, import_jsx_dev_runtime51.jsxDEV)(
             Link2,
             {
-              to: "/about",
+              to: "/collections/women",
               className: "bg-transparent text-white border-2 border-solid border-white w-fit px-4 py-1 hover:bg-white hover:text-black transition-colors",
               children: "SHOP WOMEN"
             },
@@ -44306,24 +44354,24 @@ function Homepage() {
             !1,
             {
               fileName: "app/routes/($lang)._index.tsx",
-              lineNumber: 116,
+              lineNumber: 120,
               columnNumber: 13
             },
             this
           )
         ] }, void 0, !0, {
           fileName: "app/routes/($lang)._index.tsx",
-          lineNumber: 109,
+          lineNumber: 113,
           columnNumber: 11
         }, this)
       ] }, void 0, !0, {
         fileName: "app/routes/($lang)._index.tsx",
-        lineNumber: 101,
+        lineNumber: 105,
         columnNumber: 9
       }, this),
       /* @__PURE__ */ (0, import_jsx_dev_runtime51.jsxDEV)("div", { className: "h-full w-full bg-black opacity-50 absolute" }, void 0, !1, {
         fileName: "app/routes/($lang)._index.tsx",
-        lineNumber: 124,
+        lineNumber: 128,
         columnNumber: 9
       }, this),
       /* @__PURE__ */ (0, import_jsx_dev_runtime51.jsxDEV)(
@@ -44337,51 +44385,79 @@ function Homepage() {
         !1,
         {
           fileName: "app/routes/($lang)._index.tsx",
-          lineNumber: 125,
+          lineNumber: 129,
           columnNumber: 9
         },
         this
       )
     ] }, void 0, !0, {
       fileName: "app/routes/($lang)._index.tsx",
-      lineNumber: 100,
+      lineNumber: 104,
       columnNumber: 7
     }, this),
-    /* @__PURE__ */ (0, import_jsx_dev_runtime51.jsxDEV)(import_react106.Suspense, { children: /* @__PURE__ */ (0, import_jsx_dev_runtime51.jsxDEV)(Await2, { resolve: featuredProducts, children: ({ products }) => products != null && products.nodes ? /* @__PURE__ */ (0, import_jsx_dev_runtime51.jsxDEV)(
+    featuredCollections && /* @__PURE__ */ (0, import_jsx_dev_runtime51.jsxDEV)(import_react106.Suspense, { children: /* @__PURE__ */ (0, import_jsx_dev_runtime51.jsxDEV)(Await2, { resolve: featuredCollections, children: ({ collections }) => collections != null && collections.nodes ? (console.log(), /* @__PURE__ */ (0, import_jsx_dev_runtime51.jsxDEV)(import_jsx_dev_runtime51.Fragment, { children: /* @__PURE__ */ (0, import_jsx_dev_runtime51.jsxDEV)(
       ProductSwimlane,
       {
-        products: products.nodes,
-        title: "Featured Products",
-        count: 4
+        products: collections.nodes[0].products.nodes,
+        title: collections.nodes[0].title,
+        count: 4,
+        type: "clothing",
+        href: "/collections/women",
+        prefetch: "intent"
       },
       void 0,
       !1,
       {
         fileName: "app/routes/($lang)._index.tsx",
-        lineNumber: 137,
-        columnNumber: 15
+        lineNumber: 144,
+        columnNumber: 19
       },
       this
-    ) : /* @__PURE__ */ (0, import_jsx_dev_runtime51.jsxDEV)(import_jsx_dev_runtime51.Fragment, {}, void 0, !1, {
+    ) }, void 0, !1, {
       fileName: "app/routes/($lang)._index.tsx",
-      lineNumber: 135,
-      columnNumber: 42
+      lineNumber: 143,
+      columnNumber: 17
+    }, this)) : /* @__PURE__ */ (0, import_jsx_dev_runtime51.jsxDEV)(import_jsx_dev_runtime51.Fragment, {}, void 0, !1, {
+      fileName: "app/routes/($lang)._index.tsx",
+      lineNumber: 140,
+      columnNumber: 47
     }, this) }, void 0, !1, {
       fileName: "app/routes/($lang)._index.tsx",
-      lineNumber: 133,
+      lineNumber: 138,
+      columnNumber: 11
+    }, this) }, void 0, !1, {
+      fileName: "app/routes/($lang)._index.tsx",
+      lineNumber: 137,
       columnNumber: 9
-    }, this) }, void 0, !1, {
-      fileName: "app/routes/($lang)._index.tsx",
-      lineNumber: 132,
-      columnNumber: 7
     }, this)
   ] }, void 0, !0, {
     fileName: "app/routes/($lang)._index.tsx",
-    lineNumber: 81,
+    lineNumber: 78,
     columnNumber: 5
   }, this);
 }
-var COLLECTION_CONTENT_FRAGMENT = `#graphql
+var FEATURED_COLLECTIONS_QUERY = `#graphql
+  ${PRODUCT_CARD_FRAGMENT}
+  query featuredCollections($country: CountryCode, $language: LanguageCode)
+  @inContext(country: $country, language: $language) {
+    collections(
+      first: 4,
+      sortKey: UPDATED_AT
+    ) {
+      nodes {
+        id
+        title
+        products(first: 8) {
+          nodes {
+            ...ProductCard
+            productType
+            handle
+          }
+        }
+      }
+    }
+  }
+`, COLLECTION_CONTENT_FRAGMENT = `#graphql
   ${MEDIA_FRAGMENT}
   fragment CollectionContent on Collection {
     id
@@ -44418,44 +44494,6 @@ var COLLECTION_CONTENT_FRAGMENT = `#graphql
     shop {
       name
       description
-    }
-  }
-`, COLLECTION_HERO_QUERY = `#graphql
-  ${COLLECTION_CONTENT_FRAGMENT}
-  query collectionContent($handle: String, $country: CountryCode, $language: LanguageCode)
-  @inContext(country: $country, language: $language) {
-    hero: collection(handle: $handle) {
-      ...CollectionContent
-    }
-  }
-`, HOMEPAGE_FEATURED_PRODUCTS_QUERY = `#graphql
-  ${PRODUCT_CARD_FRAGMENT}
-  query homepageFeaturedProducts($country: CountryCode, $language: LanguageCode)
-  @inContext(country: $country, language: $language) {
-    products(first: 8) {
-      nodes {
-        ...ProductCard
-      }
-    }
-  }
-`, FEATURED_COLLECTIONS_QUERY = `#graphql
-  query homepageFeaturedCollections($country: CountryCode, $language: LanguageCode)
-  @inContext(country: $country, language: $language) {
-    collections(
-      first: 4,
-      sortKey: UPDATED_AT
-    ) {
-      nodes {
-        id
-        title
-        handle
-        image {
-          altText
-          width
-          height
-          url
-        }
-      }
     }
   }
 `;
@@ -45793,7 +45831,7 @@ var LAYOUT_QUERY2 = `#graphql
 `;
 
 // server-assets-manifest:@remix-run/dev/assets-manifest
-var assets_manifest_default = { version: "6a11b35e", entry: { module: "/build/entry.client-NCJHJDPD.js", imports: ["/build/_shared/chunk-IIPXH2HL.js", "/build/_shared/chunk-X46KOHV3.js", "/build/_shared/chunk-PZSRRYRD.js", "/build/_shared/chunk-5KL4PAQL.js"] }, routes: { root: { id: "root", parentId: void 0, path: "", index: void 0, caseSensitive: void 0, module: "/build/root-3SFYPA6E.js", imports: ["/build/_shared/chunk-3J4QUTWW.js", "/build/_shared/chunk-AUYLHJJM.js", "/build/_shared/chunk-734SDATY.js", "/build/_shared/chunk-NIBLE7IV.js", "/build/_shared/chunk-SVVM2VD6.js", "/build/_shared/chunk-4EH6BNGM.js", "/build/_shared/chunk-F6XALK7G.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !0 }, "routes/$": { id: "routes/$", parentId: "root", path: "*", index: void 0, caseSensitive: void 0, module: "/build/routes/$-UTJQRW44.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($lang).$shopid.orders.$token.authenticate": { id: "routes/($lang).$shopid.orders.$token.authenticate", parentId: "root", path: ":lang?/:shopid/orders/:token/authenticate", index: void 0, caseSensitive: void 0, module: "/build/routes/($lang).$shopid.orders.$token.authenticate-WEUEQDNS.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !0 }, "routes/($lang)._index": { id: "routes/($lang)._index", parentId: "root", path: ":lang?", index: !0, caseSensitive: void 0, module: "/build/routes/($lang)._index-NVAJ5FVD.js", imports: ["/build/_shared/chunk-YADXHAZD.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($lang).account": { id: "routes/($lang).account", parentId: "root", path: ":lang?/account", index: void 0, caseSensitive: void 0, module: "/build/routes/($lang).account-5IKVLIRT.js", imports: ["/build/_shared/chunk-VMLOLI7J.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($lang).account.activate.$id.$activationToken": { id: "routes/($lang).account.activate.$id.$activationToken", parentId: "routes/($lang).account", path: "activate/:id/:activationToken", index: void 0, caseSensitive: void 0, module: "/build/routes/($lang).account.activate.$id.$activationToken-B23M6I6G.js", imports: ["/build/_shared/chunk-SVVM2VD6.js", "/build/_shared/chunk-4EH6BNGM.js", "/build/_shared/chunk-F6XALK7G.js"], hasAction: !0, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($lang).account.address.$id": { id: "routes/($lang).account.address.$id", parentId: "routes/($lang).account", path: "address/:id", index: void 0, caseSensitive: void 0, module: "/build/routes/($lang).account.address.$id-IOGYEMN3.js", imports: ["/build/_shared/chunk-AUYLHJJM.js", "/build/_shared/chunk-734SDATY.js", "/build/_shared/chunk-NIBLE7IV.js", "/build/_shared/chunk-SVVM2VD6.js", "/build/_shared/chunk-4EH6BNGM.js", "/build/_shared/chunk-F6XALK7G.js"], hasAction: !0, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($lang).account.edit": { id: "routes/($lang).account.edit", parentId: "routes/($lang).account", path: "edit", index: void 0, caseSensitive: void 0, module: "/build/routes/($lang).account.edit-BKV5DKVD.js", imports: ["/build/_shared/chunk-AUYLHJJM.js", "/build/_shared/chunk-734SDATY.js", "/build/_shared/chunk-NIBLE7IV.js", "/build/_shared/chunk-SVVM2VD6.js", "/build/_shared/chunk-4EH6BNGM.js", "/build/_shared/chunk-F6XALK7G.js"], hasAction: !0, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($lang).account.login": { id: "routes/($lang).account.login", parentId: "routes/($lang).account", path: "login", index: void 0, caseSensitive: void 0, module: "/build/routes/($lang).account.login-NPSIH2CC.js", imports: ["/build/_shared/chunk-EDLHKQLW.js", "/build/_shared/chunk-734SDATY.js", "/build/_shared/chunk-NIBLE7IV.js", "/build/_shared/chunk-SVVM2VD6.js", "/build/_shared/chunk-4EH6BNGM.js", "/build/_shared/chunk-F6XALK7G.js"], hasAction: !0, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($lang).account.logout": { id: "routes/($lang).account.logout", parentId: "routes/($lang).account", path: "logout", index: void 0, caseSensitive: void 0, module: "/build/routes/($lang).account.logout-JBINPNHY.js", imports: void 0, hasAction: !0, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($lang).account.orders.$id": { id: "routes/($lang).account.orders.$id", parentId: "routes/($lang).account", path: "orders/:id", index: void 0, caseSensitive: void 0, module: "/build/routes/($lang).account.orders.$id-LL5PB3XI.js", imports: ["/build/_shared/chunk-AUYLHJJM.js", "/build/_shared/chunk-734SDATY.js", "/build/_shared/chunk-NIBLE7IV.js", "/build/_shared/chunk-SVVM2VD6.js", "/build/_shared/chunk-4EH6BNGM.js", "/build/_shared/chunk-F6XALK7G.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($lang).account.recover": { id: "routes/($lang).account.recover", parentId: "routes/($lang).account", path: "recover", index: void 0, caseSensitive: void 0, module: "/build/routes/($lang).account.recover-BOUFAB7M.js", imports: ["/build/_shared/chunk-734SDATY.js", "/build/_shared/chunk-NIBLE7IV.js", "/build/_shared/chunk-SVVM2VD6.js", "/build/_shared/chunk-4EH6BNGM.js", "/build/_shared/chunk-F6XALK7G.js"], hasAction: !0, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($lang).account.register": { id: "routes/($lang).account.register", parentId: "routes/($lang).account", path: "register", index: void 0, caseSensitive: void 0, module: "/build/routes/($lang).account.register-IPOZU4SM.js", imports: ["/build/_shared/chunk-EDLHKQLW.js", "/build/_shared/chunk-734SDATY.js", "/build/_shared/chunk-NIBLE7IV.js", "/build/_shared/chunk-SVVM2VD6.js", "/build/_shared/chunk-4EH6BNGM.js", "/build/_shared/chunk-F6XALK7G.js"], hasAction: !0, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($lang).account.reset.$id.$resetToken": { id: "routes/($lang).account.reset.$id.$resetToken", parentId: "routes/($lang).account", path: "reset/:id/:resetToken", index: void 0, caseSensitive: void 0, module: "/build/routes/($lang).account.reset.$id.$resetToken-T3FV3EFS.js", imports: ["/build/_shared/chunk-SVVM2VD6.js", "/build/_shared/chunk-4EH6BNGM.js", "/build/_shared/chunk-F6XALK7G.js"], hasAction: !0, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($lang).api.countries": { id: "routes/($lang).api.countries", parentId: "root", path: ":lang?/api/countries", index: void 0, caseSensitive: void 0, module: "/build/routes/($lang).api.countries-7XSIWO7Y.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($lang).api.products": { id: "routes/($lang).api.products", parentId: "root", path: ":lang?/api/products", index: void 0, caseSensitive: void 0, module: "/build/routes/($lang).api.products-ZGX7IBWZ.js", imports: ["/build/_shared/chunk-YADXHAZD.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($lang).cart": { id: "routes/($lang).cart", parentId: "root", path: ":lang?/cart", index: void 0, caseSensitive: void 0, module: "/build/routes/($lang).cart-UT2JAK4I.js", imports: ["/build/_shared/chunk-TV75AG4D.js"], hasAction: !0, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($lang).cart.$lines": { id: "routes/($lang).cart.$lines", parentId: "routes/($lang).cart", path: ":lines", index: void 0, caseSensitive: void 0, module: "/build/routes/($lang).cart.$lines-VICHGTLT.js", imports: ["/build/_shared/chunk-AUYLHJJM.js", "/build/_shared/chunk-734SDATY.js", "/build/_shared/chunk-NIBLE7IV.js", "/build/_shared/chunk-SVVM2VD6.js", "/build/_shared/chunk-4EH6BNGM.js", "/build/_shared/chunk-F6XALK7G.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($lang).collections.$collectionHandle": { id: "routes/($lang).collections.$collectionHandle", parentId: "root", path: ":lang?/collections/:collectionHandle", index: void 0, caseSensitive: void 0, module: "/build/routes/($lang).collections.$collectionHandle-FGO2OD3V.js", imports: ["/build/_shared/chunk-YADXHAZD.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($lang).collections._index": { id: "routes/($lang).collections._index", parentId: "root", path: ":lang?/collections", index: !0, caseSensitive: void 0, module: "/build/routes/($lang).collections._index-S2DAEJFE.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($lang).collections.all": { id: "routes/($lang).collections.all", parentId: "root", path: ":lang?/collections/all", index: void 0, caseSensitive: void 0, module: "/build/routes/($lang).collections.all-RWEQZQ73.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($lang).discount.$code": { id: "routes/($lang).discount.$code", parentId: "root", path: ":lang?/discount/:code", index: void 0, caseSensitive: void 0, module: "/build/routes/($lang).discount.$code-L5ZSD4D6.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($lang).featured-products": { id: "routes/($lang).featured-products", parentId: "root", path: ":lang?/featured-products", index: void 0, caseSensitive: void 0, module: "/build/routes/($lang).featured-products-5TAFXATH.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($lang).journal.$journalHandle": { id: "routes/($lang).journal.$journalHandle", parentId: "root", path: ":lang?/journal/:journalHandle", index: void 0, caseSensitive: void 0, module: "/build/routes/($lang).journal.$journalHandle-RCM7I3PT.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($lang).journal._index": { id: "routes/($lang).journal._index", parentId: "root", path: ":lang?/journal", index: !0, caseSensitive: void 0, module: "/build/routes/($lang).journal._index-PGX7LBUA.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($lang).pages.$pageHandle": { id: "routes/($lang).pages.$pageHandle", parentId: "root", path: ":lang?/pages/:pageHandle", index: void 0, caseSensitive: void 0, module: "/build/routes/($lang).pages.$pageHandle-GPTWKAA6.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($lang).policies.$policyHandle": { id: "routes/($lang).policies.$policyHandle", parentId: "root", path: ":lang?/policies/:policyHandle", index: void 0, caseSensitive: void 0, module: "/build/routes/($lang).policies.$policyHandle-K526X6VO.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($lang).policies._index": { id: "routes/($lang).policies._index", parentId: "root", path: ":lang?/policies", index: !0, caseSensitive: void 0, module: "/build/routes/($lang).policies._index-K7LGZK4R.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($lang).products.$productHandle": { id: "routes/($lang).products.$productHandle", parentId: "root", path: ":lang?/products/:productHandle", index: void 0, caseSensitive: void 0, module: "/build/routes/($lang).products.$productHandle-ITKOI72L.js", imports: ["/build/_shared/chunk-YADXHAZD.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($lang).products._index": { id: "routes/($lang).products._index", parentId: "root", path: ":lang?/products", index: !0, caseSensitive: void 0, module: "/build/routes/($lang).products._index-CVT7WOTN.js", imports: ["/build/_shared/chunk-YADXHAZD.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($lang).search": { id: "routes/($lang).search", parentId: "root", path: ":lang?/search", index: void 0, caseSensitive: void 0, module: "/build/routes/($lang).search-JBR6P6KY.js", imports: ["/build/_shared/chunk-YADXHAZD.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/[robots.txt]": { id: "routes/[robots.txt]", parentId: "root", path: "robots.txt", index: void 0, caseSensitive: void 0, module: "/build/routes/[robots.txt]-VQ27HJRM.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/[sitemap.xml]": { id: "routes/[sitemap.xml]", parentId: "root", path: "sitemap.xml", index: void 0, caseSensitive: void 0, module: "/build/routes/[sitemap.xml]-LMNECGY7.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "virtual-routes/routes/graphiql": { id: "virtual-routes/routes/graphiql", parentId: "virtual-routes/virtual-root", path: "graphiql", index: void 0, caseSensitive: void 0, module: "/build/virtual-routes/routes/graphiql-GPDYRMZP.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "virtual-routes/routes/index": { id: "virtual-routes/routes/index", parentId: "virtual-routes/virtual-root", path: void 0, index: !0, caseSensitive: void 0, module: "/build/virtual-routes/routes/index-5TSV5UK4.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !0 }, "virtual-routes/virtual-root": { id: "virtual-routes/virtual-root", parentId: void 0, path: "", index: void 0, caseSensitive: void 0, module: "/build/virtual-routes/virtual-root-T3TN3GHA.js", imports: ["/build/_shared/chunk-Z7RIBLB2.js"], hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 } }, cssBundleHref: void 0, hmr: void 0, url: "/build/manifest-6A11B35E.js" };
+var assets_manifest_default = { version: "6f5bb184", entry: { module: "/build/entry.client-NCJHJDPD.js", imports: ["/build/_shared/chunk-IIPXH2HL.js", "/build/_shared/chunk-X46KOHV3.js", "/build/_shared/chunk-PZSRRYRD.js", "/build/_shared/chunk-5KL4PAQL.js"] }, routes: { root: { id: "root", parentId: void 0, path: "", index: void 0, caseSensitive: void 0, module: "/build/root-TLWNUOJ7.js", imports: ["/build/_shared/chunk-3J4QUTWW.js", "/build/_shared/chunk-AUYLHJJM.js", "/build/_shared/chunk-MKEDW52K.js", "/build/_shared/chunk-NIBLE7IV.js", "/build/_shared/chunk-SVVM2VD6.js", "/build/_shared/chunk-4EH6BNGM.js", "/build/_shared/chunk-F6XALK7G.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !0 }, "routes/$": { id: "routes/$", parentId: "root", path: "*", index: void 0, caseSensitive: void 0, module: "/build/routes/$-UTJQRW44.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($lang).$shopid.orders.$token.authenticate": { id: "routes/($lang).$shopid.orders.$token.authenticate", parentId: "root", path: ":lang?/:shopid/orders/:token/authenticate", index: void 0, caseSensitive: void 0, module: "/build/routes/($lang).$shopid.orders.$token.authenticate-433OTKKF.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !0 }, "routes/($lang)._index": { id: "routes/($lang)._index", parentId: "root", path: ":lang?", index: !0, caseSensitive: void 0, module: "/build/routes/($lang)._index-TKB6B2LI.js", imports: ["/build/_shared/chunk-YADXHAZD.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($lang).account": { id: "routes/($lang).account", parentId: "root", path: ":lang?/account", index: void 0, caseSensitive: void 0, module: "/build/routes/($lang).account-ZVOAJI2W.js", imports: ["/build/_shared/chunk-2JCR4OFH.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($lang).account.activate.$id.$activationToken": { id: "routes/($lang).account.activate.$id.$activationToken", parentId: "routes/($lang).account", path: "activate/:id/:activationToken", index: void 0, caseSensitive: void 0, module: "/build/routes/($lang).account.activate.$id.$activationToken-B23M6I6G.js", imports: ["/build/_shared/chunk-SVVM2VD6.js", "/build/_shared/chunk-4EH6BNGM.js", "/build/_shared/chunk-F6XALK7G.js"], hasAction: !0, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($lang).account.address.$id": { id: "routes/($lang).account.address.$id", parentId: "routes/($lang).account", path: "address/:id", index: void 0, caseSensitive: void 0, module: "/build/routes/($lang).account.address.$id-XHJCKT72.js", imports: ["/build/_shared/chunk-AUYLHJJM.js", "/build/_shared/chunk-MKEDW52K.js", "/build/_shared/chunk-NIBLE7IV.js", "/build/_shared/chunk-SVVM2VD6.js", "/build/_shared/chunk-4EH6BNGM.js", "/build/_shared/chunk-F6XALK7G.js"], hasAction: !0, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($lang).account.edit": { id: "routes/($lang).account.edit", parentId: "routes/($lang).account", path: "edit", index: void 0, caseSensitive: void 0, module: "/build/routes/($lang).account.edit-LYTMZTRY.js", imports: ["/build/_shared/chunk-AUYLHJJM.js", "/build/_shared/chunk-MKEDW52K.js", "/build/_shared/chunk-NIBLE7IV.js", "/build/_shared/chunk-SVVM2VD6.js", "/build/_shared/chunk-4EH6BNGM.js", "/build/_shared/chunk-F6XALK7G.js"], hasAction: !0, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($lang).account.login": { id: "routes/($lang).account.login", parentId: "routes/($lang).account", path: "login", index: void 0, caseSensitive: void 0, module: "/build/routes/($lang).account.login-64JA3BJB.js", imports: ["/build/_shared/chunk-XGGRHOF7.js", "/build/_shared/chunk-MKEDW52K.js", "/build/_shared/chunk-NIBLE7IV.js", "/build/_shared/chunk-SVVM2VD6.js", "/build/_shared/chunk-4EH6BNGM.js", "/build/_shared/chunk-F6XALK7G.js"], hasAction: !0, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($lang).account.logout": { id: "routes/($lang).account.logout", parentId: "routes/($lang).account", path: "logout", index: void 0, caseSensitive: void 0, module: "/build/routes/($lang).account.logout-JBINPNHY.js", imports: void 0, hasAction: !0, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($lang).account.orders.$id": { id: "routes/($lang).account.orders.$id", parentId: "routes/($lang).account", path: "orders/:id", index: void 0, caseSensitive: void 0, module: "/build/routes/($lang).account.orders.$id-6AQSPSS3.js", imports: ["/build/_shared/chunk-AUYLHJJM.js", "/build/_shared/chunk-MKEDW52K.js", "/build/_shared/chunk-NIBLE7IV.js", "/build/_shared/chunk-SVVM2VD6.js", "/build/_shared/chunk-4EH6BNGM.js", "/build/_shared/chunk-F6XALK7G.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($lang).account.recover": { id: "routes/($lang).account.recover", parentId: "routes/($lang).account", path: "recover", index: void 0, caseSensitive: void 0, module: "/build/routes/($lang).account.recover-42QNRQTW.js", imports: ["/build/_shared/chunk-MKEDW52K.js", "/build/_shared/chunk-NIBLE7IV.js", "/build/_shared/chunk-SVVM2VD6.js", "/build/_shared/chunk-4EH6BNGM.js", "/build/_shared/chunk-F6XALK7G.js"], hasAction: !0, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($lang).account.register": { id: "routes/($lang).account.register", parentId: "routes/($lang).account", path: "register", index: void 0, caseSensitive: void 0, module: "/build/routes/($lang).account.register-KKZ2QXIB.js", imports: ["/build/_shared/chunk-XGGRHOF7.js", "/build/_shared/chunk-MKEDW52K.js", "/build/_shared/chunk-NIBLE7IV.js", "/build/_shared/chunk-SVVM2VD6.js", "/build/_shared/chunk-4EH6BNGM.js", "/build/_shared/chunk-F6XALK7G.js"], hasAction: !0, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($lang).account.reset.$id.$resetToken": { id: "routes/($lang).account.reset.$id.$resetToken", parentId: "routes/($lang).account", path: "reset/:id/:resetToken", index: void 0, caseSensitive: void 0, module: "/build/routes/($lang).account.reset.$id.$resetToken-T3FV3EFS.js", imports: ["/build/_shared/chunk-SVVM2VD6.js", "/build/_shared/chunk-4EH6BNGM.js", "/build/_shared/chunk-F6XALK7G.js"], hasAction: !0, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($lang).api.countries": { id: "routes/($lang).api.countries", parentId: "root", path: ":lang?/api/countries", index: void 0, caseSensitive: void 0, module: "/build/routes/($lang).api.countries-7XSIWO7Y.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($lang).api.products": { id: "routes/($lang).api.products", parentId: "root", path: ":lang?/api/products", index: void 0, caseSensitive: void 0, module: "/build/routes/($lang).api.products-ZGX7IBWZ.js", imports: ["/build/_shared/chunk-YADXHAZD.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($lang).cart": { id: "routes/($lang).cart", parentId: "root", path: ":lang?/cart", index: void 0, caseSensitive: void 0, module: "/build/routes/($lang).cart-64W5JXDF.js", imports: ["/build/_shared/chunk-TGBMEBCC.js"], hasAction: !0, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($lang).cart.$lines": { id: "routes/($lang).cart.$lines", parentId: "routes/($lang).cart", path: ":lines", index: void 0, caseSensitive: void 0, module: "/build/routes/($lang).cart.$lines-43LNAWOI.js", imports: ["/build/_shared/chunk-AUYLHJJM.js", "/build/_shared/chunk-MKEDW52K.js", "/build/_shared/chunk-NIBLE7IV.js", "/build/_shared/chunk-SVVM2VD6.js", "/build/_shared/chunk-4EH6BNGM.js", "/build/_shared/chunk-F6XALK7G.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($lang).collections.$collectionHandle": { id: "routes/($lang).collections.$collectionHandle", parentId: "root", path: ":lang?/collections/:collectionHandle", index: void 0, caseSensitive: void 0, module: "/build/routes/($lang).collections.$collectionHandle-XZF33KG4.js", imports: ["/build/_shared/chunk-YADXHAZD.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($lang).collections._index": { id: "routes/($lang).collections._index", parentId: "root", path: ":lang?/collections", index: !0, caseSensitive: void 0, module: "/build/routes/($lang).collections._index-D5STY4TK.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($lang).collections.all": { id: "routes/($lang).collections.all", parentId: "root", path: ":lang?/collections/all", index: void 0, caseSensitive: void 0, module: "/build/routes/($lang).collections.all-RWEQZQ73.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($lang).discount.$code": { id: "routes/($lang).discount.$code", parentId: "root", path: ":lang?/discount/:code", index: void 0, caseSensitive: void 0, module: "/build/routes/($lang).discount.$code-L5ZSD4D6.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($lang).featured-products": { id: "routes/($lang).featured-products", parentId: "root", path: ":lang?/featured-products", index: void 0, caseSensitive: void 0, module: "/build/routes/($lang).featured-products-5TAFXATH.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($lang).journal.$journalHandle": { id: "routes/($lang).journal.$journalHandle", parentId: "root", path: ":lang?/journal/:journalHandle", index: void 0, caseSensitive: void 0, module: "/build/routes/($lang).journal.$journalHandle-UEQANQEH.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($lang).journal._index": { id: "routes/($lang).journal._index", parentId: "root", path: ":lang?/journal", index: !0, caseSensitive: void 0, module: "/build/routes/($lang).journal._index-3NBS7DTB.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($lang).pages.$pageHandle": { id: "routes/($lang).pages.$pageHandle", parentId: "root", path: ":lang?/pages/:pageHandle", index: void 0, caseSensitive: void 0, module: "/build/routes/($lang).pages.$pageHandle-JFL5M5VX.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($lang).policies.$policyHandle": { id: "routes/($lang).policies.$policyHandle", parentId: "root", path: ":lang?/policies/:policyHandle", index: void 0, caseSensitive: void 0, module: "/build/routes/($lang).policies.$policyHandle-YVZI74PM.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($lang).policies._index": { id: "routes/($lang).policies._index", parentId: "root", path: ":lang?/policies", index: !0, caseSensitive: void 0, module: "/build/routes/($lang).policies._index-EBOLA6VY.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($lang).products.$productHandle": { id: "routes/($lang).products.$productHandle", parentId: "root", path: ":lang?/products/:productHandle", index: void 0, caseSensitive: void 0, module: "/build/routes/($lang).products.$productHandle-7DF4FJ6F.js", imports: ["/build/_shared/chunk-YADXHAZD.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($lang).products._index": { id: "routes/($lang).products._index", parentId: "root", path: ":lang?/products", index: !0, caseSensitive: void 0, module: "/build/routes/($lang).products._index-XB6BXT6B.js", imports: ["/build/_shared/chunk-YADXHAZD.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/($lang).search": { id: "routes/($lang).search", parentId: "root", path: ":lang?/search", index: void 0, caseSensitive: void 0, module: "/build/routes/($lang).search-R37SGP6T.js", imports: ["/build/_shared/chunk-YADXHAZD.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/[robots.txt]": { id: "routes/[robots.txt]", parentId: "root", path: "robots.txt", index: void 0, caseSensitive: void 0, module: "/build/routes/[robots.txt]-VQ27HJRM.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/[sitemap.xml]": { id: "routes/[sitemap.xml]", parentId: "root", path: "sitemap.xml", index: void 0, caseSensitive: void 0, module: "/build/routes/[sitemap.xml]-LMNECGY7.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "virtual-routes/routes/graphiql": { id: "virtual-routes/routes/graphiql", parentId: "virtual-routes/virtual-root", path: "graphiql", index: void 0, caseSensitive: void 0, module: "/build/virtual-routes/routes/graphiql-GPDYRMZP.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "virtual-routes/routes/index": { id: "virtual-routes/routes/index", parentId: "virtual-routes/virtual-root", path: void 0, index: !0, caseSensitive: void 0, module: "/build/virtual-routes/routes/index-5TSV5UK4.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !0 }, "virtual-routes/virtual-root": { id: "virtual-routes/virtual-root", parentId: void 0, path: "", index: void 0, caseSensitive: void 0, module: "/build/virtual-routes/virtual-root-T3TN3GHA.js", imports: ["/build/_shared/chunk-Z7RIBLB2.js"], hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 } }, cssBundleHref: void 0, hmr: void 0, url: "/build/manifest-6F5BB184.js" };
 
 // server-entry-module:@remix-run/dev/server-build
 var assetsBuildDirectory = "dist/client/build", future = { unstable_cssModules: !1, unstable_cssSideEffectImports: !1, unstable_dev: !1, unstable_postcss: !0, unstable_tailwind: !0, unstable_vanillaExtract: !1, v2_errorBoundary: !0, v2_meta: !0, v2_normalizeFormMethod: !0, v2_routeConvention: !0 }, publicPath = "/build/", entry = { module: entry_server_exports }, routes = {
