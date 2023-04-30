@@ -72,8 +72,6 @@ export async function loader({params, context}: LoaderArgs) {
 
 export default function Homepage() {
   const {featuredCollections} = useLoaderData<typeof loader>();
-
-  console.log(featuredCollections);
   return (
     <>
       <Hero />
@@ -84,7 +82,6 @@ export default function Homepage() {
           <Await resolve={featuredCollections}>
             {({collections}) => {
               if (!collections?.nodes) return <></>;
-              console.log();
               return (
                 <>
                   <ProductSwimlane
@@ -138,7 +135,6 @@ export default function Homepage() {
           <Await resolve={featuredCollections}>
             {({collections}) => {
               if (!collections?.nodes) return <></>;
-              console.log();
               return (
                 <>
                   <ProductSwimlane
