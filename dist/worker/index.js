@@ -44881,7 +44881,7 @@ var loader27 = ({ request }) => {
   });
 };
 function robotsTxtData({ url }) {
-  let sitemapUrl = url ? `${url}/sitemap.xml` : void 0;
+  let sitemapUrl = url ? `/${url}/sitemap.xml` : void 0;
   return `
 User-agent: *
 Disallow: /admin
