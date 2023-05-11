@@ -1,8 +1,9 @@
 node_modules
-/.cache
+.cache
 /build
-/dist
 /public/build
+dist
 /.mf
 .env
 .vscode
+.vercel
