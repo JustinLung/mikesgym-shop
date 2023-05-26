@@ -20,7 +20,6 @@ import {Layout} from '~/components';
 import {GenericError} from './components/GenericError';
 import {NotFound} from './components/NotFound';
 import styles from './styles/app.css';
-import favicon from '../public/favicon.svg';
 import {seoPayload} from '~/lib/seo.server';
 import {
   DEFAULT_LOCALE,
@@ -43,7 +42,6 @@ export const links: LinksFunction = () => {
       rel: 'preconnect',
       href: 'https://shop.app',
     },
-    {rel: 'icon', type: 'image/svg+xml', href: favicon},
   ];
 };
 
