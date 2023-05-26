@@ -130,11 +130,11 @@ function MenuMobileNav({onClose}: {onClose: () => void}) {
       <Link to="/products" onClick={onClose}>
         Products
       </Link>
+      <Link to="/collections" onClick={onClose}>
+        Collections
+      </Link>
       <Link to="/about" onClick={onClose}>
         About
-      </Link>
-      <Link to="/contact" onClick={onClose}>
-        Contact
       </Link>
       <Link
         to="https://mikesgym.com/memberships/"
@@ -221,8 +221,8 @@ function DesktopHeader({
       </Link>
       <nav className="flex gap-8 ml-auto">
         <Link to="/products">Products</Link>
+        <Link to="/collections">Collections</Link>
         <Link to="/about">About</Link>
-        <Link to="/contact">Contact</Link>
       </nav>
       <div className="flex justify-center items-center gap-4 ml-auto">
         <Link
