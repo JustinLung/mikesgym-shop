@@ -60,8 +60,8 @@ export function CartDetails({
       <CartLines lines={cart?.lines} layout={layout} />
       {cartHasItems && (
         <CartSummary cost={cart.cost} layout={layout}>
-            <CartDiscounts discountCodes={cart.discountCodes} />
-            <CartCheckoutActions checkoutUrl={cart.checkoutUrl} />
+          <CartDiscounts discountCodes={cart.discountCodes} />
+          <CartCheckoutActions checkoutUrl={cart.checkoutUrl} />
         </CartSummary>
       )}
     </div>
@@ -174,12 +174,12 @@ function CartCheckoutActions({checkoutUrl}: {checkoutUrl: string}) {
   if (!checkoutUrl) return null;
 
   return (
-    <div className="flex flex-col mt-2">
+    <div className="flex flex-col mt-2 w-full">
       <a href={checkoutUrl} target="_self">
         <Button
           as="span"
           width="full"
-          className="border-2 bg-mg-yellow text-black border-mg-yellow hover:bg-transparent transition-colors hover:text-mg-yellow px-4 py-2"
+          className="border-2 block w-full text-center bg-mg-yellow text-black border-mg-yellow hover:bg-transparent transition-colors hover:text-mg-yellow px-4 py-2"
         >
           Continue to Checkout
         </Button>
@@ -229,6 +229,8 @@ function CartLineItem({line}: {line: CartLine}) {
 
   const {id, quantity, merchandise} = line;
 
+  console.log(merchandise)
+
   if (typeof quantity === 'undefined' || !merchandise?.product) return null;
 
   return (
@@ -249,9 +251,16 @@ function CartLineItem({line}: {line: CartLine}) {
         <div className="grid gap-2">
           <Heading as="h3" size="copy">
             {merchandise?.product?.handle ? (
-              <Link to={`/products/${merchandise.product.handle}`}>
-                {merchandise?.product?.title || ''}
-              </Link>
+              <>
+                <Link to={`/products/${merchandise.product.handle}`}>
+                  {merchandise?.product?.title || ''}
+                </Link>
+                {merchandise?.selectedOptions.map(option=> {
+                  return (
+                    <p className="text-300 text-xs">{option.name} {option.value}</p>
+                  )
+                })}
+              </>
             ) : (
               <Text>{merchandise?.product?.title || ''}</Text>
             )}
