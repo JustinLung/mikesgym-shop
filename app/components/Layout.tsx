@@ -136,14 +136,7 @@ function MenuMobileNav({onClose}: {onClose: () => void}) {
       <Link to="/about" onClick={onClose}>
         About
       </Link>
-      <Link
-        to="https://mikesgym.com/memberships/"
-        target="_blank"
-        rel="noreferrer noopener"
-        className="bg-mg-yellow text-black py-2 px-4 border-2 border-mg-yellow hover:bg-transparent transition-colors hover:text-mg-yellow w-fit"
-      >
-        BECOME A MEMBER
-      </Link>
+      <a href="https://mikesgym.com/memberships/" target="_blank" rel="noreferrer noopener">Join us</a>
     </nav>
   );
 }
@@ -219,20 +212,13 @@ function DesktopHeader({
           className="w-20"
         />
       </Link>
-      <nav className="flex gap-8 ml-auto">
+      <nav className="flex gap-8">
         <Link to="/products">Products</Link>
         <Link to="/collections">Collections</Link>
         <Link to="/about">About</Link>
+        <a href="https://mikesgym.com/memberships/" target="_blank" rel="noreferrer noopener">Join us</a>
       </nav>
-      <div className="flex justify-center items-center gap-4 ml-auto">
-        <Link
-          to="https://mikesgym.com/memberships/"
-          target="_blank"
-          rel="noreferrer noopener"
-          className="bg-mg-yellow text-black py-2 px-4 border-2 border-mg-yellow hover:bg-transparent transition-colors hover:text-mg-yellow"
-        >
-          BECOME A MEMBER
-        </Link>
+      <div className="flex justify-center items-center gap-4">
         <CartCount isHome={isHome} openCart={openCart} />
         <AccountLink className="relative flex items-center justify-center w-8 h-8" />
       </div>
