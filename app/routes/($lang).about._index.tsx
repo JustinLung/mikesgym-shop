@@ -19,10 +19,10 @@ export default function About() {
           className="w-full h-full object-cover"
         />
       </section>
-      <section className="flex flex-col md:flex-row justify-center items-center p-10 gap-4">
+      <section className="flex flex-col md:flex-row justify-around items-center p-10 gap-4">
         <div>
           <h2 className="text-4xl pb-4 text-mg-yellow">PUSH YOUR LIMITS</h2>
-          <p>
+          <p className="max-w-[30rem]">
             Mike Passenier has been a big boxing fan his whole life. His love
             for combat sport was developed at an early age. He started training
             a group of fighters in 2002 and a year later he openend his own gym.
@@ -41,7 +41,7 @@ export default function About() {
       </section>
       <figure className="bg-mg-yellow text-black px-10 py-10 font-light">
         <span className="text-8xl">"</span>
-        <blockquote className="text-xl max-w-6xl" cite="Mike Passenier">
+        <blockquote className="text-xl max-w-[45rem]" cite="Mike Passenier">
           I create champions! Most people will think of Badr Hari or Gokhan Saki
           when they hear the word champions but in my gym everyone is a winner.
           Everyone that is willing to work hard and achieve their personal goals

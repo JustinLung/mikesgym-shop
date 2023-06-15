@@ -3,11 +3,12 @@ module.exports = {
   appDirectory: 'app',
   ignoredRouteFiles: ['**/.*'],
   watchPaths: ['./public'],
-  server: './server.ts',
+  server:
+    process.env.NODE_ENV === 'development' ? './server-dev.ts' : './server.ts',
   /**
    * The following settings are required to deploy Hydrogen apps to Oxygen:
    */
-  publicPath: (process.env.HYDROGEN_ASSET_BASE_URL ?? '/'),
+  publicPath: (process.env.HYDROGEN_ASSET_BASE_URL ?? '/') + 'build/',
   assetsBuildDirectory: 'dist/client/build',
   serverBuildPath: 'dist/worker/index.js',
   serverMainFields: ['browser', 'module', 'main'],

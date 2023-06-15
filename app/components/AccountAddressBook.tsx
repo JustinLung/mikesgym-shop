@@ -25,7 +25,7 @@ export function AccountAddressBook({
           <div className="w-48">
             <Button
               to="address/add"
-              className="mt-2 text-sm w-full mb-6"
+              className="mt-2 text-sm w-full mb-6 uppercase"
               variant="secondary"
             >
               Add an Address

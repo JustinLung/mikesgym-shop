@@ -123,7 +123,7 @@ export function MenuDrawer({
 
 function MenuMobileNav({onClose}: {onClose: () => void}) {
   return (
-    <nav className="grid gap-4 p-6 sm:gap-6 md:px-12">
+    <nav className="grid gap-4 p-6 sm:gap-6 md:px-12 uppercase">
       <Link to="/" onClick={onClose}>
         Home
       </Link>
@@ -174,7 +174,7 @@ function MobileHeader({
   return (
     <header
       role="banner"
-      className="flex bg-black text-white lg:hidden items-center h-nav sticky backdrop-blur-lg z-40 top-0 justify-between w-full leading-none gap-4 px-4 md:px-8"
+      className="flex bg-black text-white lg:hidden items-center h-nav sticky backdrop-blur-lg z-40 top-0 justify-between w-full leading-none gap-4 px-4 md:px-8 uppercase"
     >
       <div className="flex items-center justify-start w-full gap-4">
         <button
@@ -210,7 +210,7 @@ function DesktopHeader({
   return (
     <header
       role="banner"
-      className="hidden bg-black text-white h-nav lg:flex items-center sticky transition duration-300 z-40 top-0 justify-between w-full leading-none gap-8 px-12 py-8"
+      className="hidden bg-black text-white h-nav lg:flex items-center sticky transition duration-300 z-40 top-0 justify-between w-full leading-none gap-8 px-12 py-8 uppercase"
     >
       <Link className="font-bold" to="/" prefetch="intent">
         <img

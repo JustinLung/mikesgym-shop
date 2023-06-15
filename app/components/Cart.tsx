@@ -60,8 +60,8 @@ export function CartDetails({
       <CartLines lines={cart?.lines} layout={layout} />
       {cartHasItems && (
         <CartSummary cost={cart.cost} layout={layout}>
-          <CartDiscounts discountCodes={cart.discountCodes} />
-          <CartCheckoutActions checkoutUrl={cart.checkoutUrl} />
+            <CartDiscounts discountCodes={cart.discountCodes} />
+            <CartCheckoutActions checkoutUrl={cart.checkoutUrl} />
         </CartSummary>
       )}
     </div>
@@ -109,12 +109,12 @@ function CartDiscounts({
           )}
         >
           <input
-            className="text-black bg-white"
+            className="text-white bg-transparent"
             type="text"
             name="discountCode"
             placeholder="Discount code"
           />
-          <button className="flex justify-end font-medium whitespace-nowrap">
+          <button className="flex justify-end font-medium whitespace-nowrap uppercase">
             Apply Discount
           </button>
         </div>
